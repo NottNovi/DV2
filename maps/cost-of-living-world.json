@@ -1,0 +1,365 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "World choropleth map of the 2026 cost of living index by country (New York = 100), with Australia highlighted. Small countries and territories are shown as dots.",
+  "title": {
+    "text": "How Australia's cost of living compares with the world",
+    "subtitle": [
+      "Each country is scored against New York City (= 100): a score of 70 means prices about 30% lower than New York.",
+      "Choose a measure below. Small countries are shown as dots; grey countries have no data. Hover for details."
+    ],
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 470,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "params": [
+    {
+      "name": "measure",
+      "value": "cost_of_living",
+      "bind": {
+        "input": "select",
+        "name": "Measure: ",
+        "options": [
+          "cost_of_living",
+          "rent",
+          "cost_of_living_plus_rent",
+          "groceries",
+          "restaurants",
+          "purchasing_power"
+        ],
+        "labels": [
+          "Everyday prices (excluding rent)",
+          "Rent",
+          "Everyday prices plus rent",
+          "Groceries",
+          "Eating out",
+          "Local purchasing power (what wages can buy)"
+        ]
+      }
+    }
+  ],
+  "layer": [
+    {
+      "description": "Base layer: every country in light grey (no data).",
+      "data": {
+        "url": "data/world_countries_110m.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e6e6e6",
+        "stroke": "white",
+        "strokeWidth": 0.3
+      }
+    },
+    {
+      "data": {
+        "url": "data/cost_of_living_2026.csv"
+      },
+      "transform": [
+        {
+          "calculate": "toNumber(datum[measure])",
+          "as": "value"
+        },
+        {
+          "filter": "isValid(datum.value)"
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "measure_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "value",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "count",
+              "as": "n"
+            }
+          ]
+        },
+        {
+          "calculate": "datum.country == 'Australia' ? datum.value : null",
+          "as": "aus_tmp"
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "max",
+              "field": "aus_tmp",
+              "as": "aus_value"
+            }
+          ]
+        },
+        {
+          "calculate": "datum.value / datum.aus_value - 1",
+          "as": "vs_aus"
+        },
+        {
+          "calculate": "datum.country",
+          "as": "Country"
+        },
+        {
+          "calculate": "format(datum.value, '.1f') + '  (New York = 100)'",
+          "as": "Index score"
+        },
+        {
+          "calculate": "datum.measure_rank + ' of ' + datum.n",
+          "as": "World ranking"
+        },
+        {
+          "calculate": "datum.country == 'Australia' ? 'This is Australia' : (abs(datum.vs_aus) < 0.005 ? 'About the same' : format(abs(datum.vs_aus), '.0%') + (datum.vs_aus > 0 ? ' higher' : ' lower'))",
+          "as": "Compared with Australia"
+        },
+        {
+          "lookup": "country",
+          "from": {
+            "data": {
+              "url": "data/world_countries_110m.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "countries"
+              }
+            },
+            "key": "properties.country"
+          },
+          "as": "geo"
+        }
+      ],
+      "layer": [
+        {
+          "description": "Choropleth: countries shaded by the selected index.",
+          "transform": [
+            {
+              "filter": "datum.small == 0 && isValid(datum.geo)"
+            }
+          ],
+          "params": [
+            {
+              "name": "hover",
+              "select": {
+                "type": "point",
+                "on": "pointerover",
+                "clear": "pointerout",
+                "fields": [
+                  "country"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "stroke": "white",
+            "strokeWidth": 0.3
+          },
+          "encoding": {
+            "shape": {
+              "field": "geo",
+              "type": "geojson"
+            },
+            "color": {
+              "field": "value",
+              "type": "quantitative",
+              "title": [
+                "Index score",
+                "(New York = 100)"
+              ],
+              "scale": {
+                "scheme": "yelloworangered",
+                "domainMin": 0
+              },
+              "legend": {
+                "orient": "bottom-left",
+                "direction": "horizontal",
+                "gradientLength": 220,
+                "titleFontSize": 12,
+                "labelFontSize": 11,
+                "fillColor": "rgba(255,255,255,0.85)",
+                "padding": 6
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": "#222"
+              },
+              "value": "white"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": 1.5
+              },
+              "value": 0.3
+            },
+            "tooltip": [
+              {
+                "field": "Country"
+              },
+              {
+                "field": "Index score"
+              },
+              {
+                "field": "World ranking"
+              },
+              {
+                "field": "Compared with Australia"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Small countries and territories drawn as dots so they stay visible.",
+          "transform": [
+            {
+              "filter": "datum.small == 1"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 28,
+            "stroke": "#666",
+            "strokeWidth": 0.6,
+            "opacity": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "value",
+              "type": "quantitative",
+              "title": [
+                "Index score",
+                "(New York = 100)"
+              ],
+              "scale": {
+                "scheme": "yelloworangered",
+                "domainMin": 0
+              },
+              "legend": {
+                "orient": "bottom-left",
+                "direction": "horizontal",
+                "gradientLength": 220,
+                "titleFontSize": 12,
+                "labelFontSize": 11,
+                "fillColor": "rgba(255,255,255,0.85)",
+                "padding": 6
+              }
+            },
+            "tooltip": [
+              {
+                "field": "Country"
+              },
+              {
+                "field": "Index score"
+              },
+              {
+                "field": "World ranking"
+              },
+              {
+                "field": "Compared with Australia"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Australia highlighted with a dark outline.",
+          "transform": [
+            {
+              "filter": "datum.country == 'Australia'"
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "filled": false,
+            "stroke": "#1f2d3d",
+            "strokeWidth": 1.8
+          },
+          "encoding": {
+            "shape": {
+              "field": "geo",
+              "type": "geojson"
+            },
+            "tooltip": [
+              {
+                "field": "Country"
+              },
+              {
+                "field": "Index score"
+              },
+              {
+                "field": "World ranking"
+              },
+              {
+                "field": "Compared with Australia"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Annotation: Australia's ranking for the selected measure.",
+          "transform": [
+            {
+              "filter": "datum.country == 'Australia'"
+            },
+            {
+              "calculate": "'Australia: ' + datum.measure_rank + ' of ' + datum.n",
+              "as": "note"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": 0,
+            "dy": 0,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f2d3d"
+          },
+          "encoding": {
+            "longitude": {
+              "datum": 111
+            },
+            "latitude": {
+              "datum": -33
+            },
+            "text": {
+              "field": "note"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}

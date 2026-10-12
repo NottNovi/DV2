@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A basic world map used to test the project setup.",
+  "width": "container",
+  "height": 400,
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+    "format": {
+      "type": "topojson",
+      "feature": "countries"
+    }
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "mark": {
+    "type": "geoshape",
+    "fill": "#dbe5ed",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  }
+}

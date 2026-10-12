@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+section {
+  margin-top: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+}
+
+#map1 {
+  width: 100%;
+}
+
+a {
+  color: #175ca8;
+}

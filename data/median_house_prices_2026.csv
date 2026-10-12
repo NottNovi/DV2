@@ -1,0 +1,16 @@
+location,state,area_type,median_price,monthly_growth,annual_growth,lon,lat,label_lon,label_lat,label_align
+Sydney,NSW,Capital city,1563000,-0.007,-0.026,151.21,-33.87,153.3,-33.6,left
+Rest of NSW,NSW,Rest of state,826000,-0.002,0.058,146.5,-32.0,146.5,-29.9,center
+Melbourne,VIC,Capital city,971000,-0.005,-0.036,144.96,-37.81,145.6,-39.2,left
+Rest of Vic,VIC,Rest of state,634000,-0.001,0.048,142.4,-36.4,140.6,-38.5,right
+Brisbane,QLD,Capital city,1206000,-0.003,0.097,153.03,-27.47,154.6,-27.0,left
+Rest of Qld,QLD,Rest of state,838000,-0.001,0.095,144.5,-22.5,144.5,-20.4,center
+Adelaide,SA,Capital city,1011000,-0.006,0.097,138.6,-34.93,137.4,-36.3,right
+Rest of SA,SA,Rest of state,534000,0.006,0.127,135.0,-29.5,135.0,-27.5,center
+Perth,WA,Capital city,1090000,-0.001,0.148,115.86,-31.95,114.2,-34.6,left
+Rest of WA,WA,Rest of state,692000,-0.001,0.142,121.5,-26.0,121.5,-23.9,center
+Hobart,TAS,Capital city,782000,-0.007,0.079,147.33,-42.88,148.9,-43.0,left
+Rest of Tas,TAS,Rest of state,611000,0,0.125,145.4,-41.3,143.9,-40.4,right
+Darwin,NT,Capital city,725000,0.001,0.151,130.84,-12.46,132.4,-11.0,left
+Rest of NT,NT,Rest of state,370000,0,0.009,133.5,-20.5,133.5,-18.5,center
+ACT,ACT,Capital city,989000,-0.006,-0.007,149.13,-35.28,151.2,-36.8,left

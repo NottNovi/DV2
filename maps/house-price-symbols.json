@@ -1,0 +1,443 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Proportional symbol map: median house price (circle size) and annual change in value (circle colour) for each Australian capital city and the rest of each state, 2026.",
+  "title": {
+    "text": "Where house prices are still climbing",
+    "subtitle": [
+      "Median house price (circle size) and change over the past year (colour), capital cities vs the rest of each state.",
+      "Hover a circle for details."
+    ],
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 520,
+  "projection": {
+    "type": "mercator"
+  },
+  "params": [
+    {
+      "name": "show",
+      "value": "All areas",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "All areas",
+          "Capital city",
+          "Rest of state"
+        ],
+        "labels": [
+          "All areas",
+          "Capital cities only",
+          "Rest of state only"
+        ],
+        "name": "Show: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "description": "Base map: Australian states and territories.",
+      "data": {
+        "url": "data/aus_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#dfe9f3",
+        "stroke": "white",
+        "strokeWidth": 1.2
+      }
+    },
+    {
+      "data": {
+        "url": "data/median_house_prices_2026.csv"
+      },
+      "transform": [
+        {
+          "calculate": "toNumber(datum.median_price)",
+          "as": "price"
+        },
+        {
+          "calculate": "toNumber(datum.annual_growth)",
+          "as": "annual"
+        },
+        {
+          "calculate": "toNumber(datum.monthly_growth)",
+          "as": "monthly"
+        },
+        {
+          "calculate": "datum.price >= 1000000 ? '$' + format(datum.price / 1000000, '.2f') + 'm' : '$' + format(datum.price / 1000, '.0f') + 'k'",
+          "as": "price_label"
+        },
+        {
+          "calculate": "(datum.annual > 0 ? '+' : datum.annual < 0 ? '−' : '') + format(abs(datum.annual), '.1%')",
+          "as": "annual_label"
+        },
+        {
+          "calculate": "datum.price_label + '   ' + datum.annual_label",
+          "as": "label_value"
+        },
+        {
+          "calculate": "datum.annual < 0 ? 'Falling' : datum.annual < 0.05 ? 'Up 0–5%' : datum.annual < 0.10 ? 'Up 5–10%' : datum.annual < 0.15 ? 'Up 10–15%' : 'Up 15% or more'",
+          "as": "growth_band"
+        },
+        {
+          "calculate": "datum.location",
+          "as": "Area"
+        },
+        {
+          "calculate": "datum.price_label",
+          "as": "Median house price"
+        },
+        {
+          "calculate": "datum.annual_label",
+          "as": "Change over 12 months"
+        },
+        {
+          "calculate": "(datum.monthly > 0 ? '+' : datum.monthly < 0 ? '−' : '') + format(abs(datum.monthly), '.1%')",
+          "as": "Change over last month"
+        }
+      ],
+      "layer": [
+        {
+          "description": "Proportional circles: area shows median price, colour shows annual change.",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            }
+          ],
+          "params": [
+            {
+              "name": "hover",
+              "select": {
+                "type": "point",
+                "on": "pointerover",
+                "clear": "pointerout",
+                "fields": [
+                  "location"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.9,
+            "stroke": "white",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "price",
+              "type": "quantitative",
+              "title": "Median house price",
+              "scale": {
+                "domain": [
+                  0,
+                  1600000
+                ],
+                "range": [
+                  0,
+                  1900
+                ]
+              },
+              "legend": {
+                "values": [
+                  500000,
+                  1000000,
+                  1500000
+                ],
+                "labelExpr": "datum.value >= 1000000 ? '$' + format(datum.value / 1000000, '.1f') + 'm' : '$' + format(datum.value / 1000, '.0f') + 'k'",
+                "symbolFillColor": "#8a9bb0",
+                "symbolStrokeWidth": 0,
+                "orient": "top",
+                "direction": "horizontal"
+              }
+            },
+            "color": {
+              "field": "growth_band",
+              "type": "ordinal",
+              "title": "Change over 12 months",
+              "scale": {
+                "domain": [
+                  "Falling",
+                  "Up 0–5%",
+                  "Up 5–10%",
+                  "Up 10–15%",
+                  "Up 15% or more"
+                ],
+                "range": [
+                  "#4a7fb5",
+                  "#fde0c5",
+                  "#f9a65a",
+                  "#e8601c",
+                  "#a63603"
+                ]
+              },
+              "legend": {
+                "orient": "top",
+                "direction": "horizontal",
+                "symbolType": "circle",
+                "symbolSize": 150,
+                "columns": 5
+              }
+            },
+            "order": {
+              "field": "price",
+              "sort": "descending"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": 2.5
+              },
+              "value": 1
+            },
+            "stroke": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": "#1f2d3d"
+              },
+              "value": "white"
+            },
+            "tooltip": [
+              {
+                "field": "Area"
+              },
+              {
+                "field": "area_type",
+                "title": "Type"
+              },
+              {
+                "field": "Median house price"
+              },
+              {
+                "field": "Change over 12 months"
+              },
+              {
+                "field": "Change over last month"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Place name labels (left-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'left'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "bottom",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f2d3d"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "location"
+            }
+          }
+        },
+        {
+          "description": "Price and annual change labels (left-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'left'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "dy": 2,
+            "fontSize": 11,
+            "color": "#33475b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label_value"
+            }
+          }
+        },
+        {
+          "description": "Place name labels (right-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'right'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f2d3d"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "location"
+            }
+          }
+        },
+        {
+          "description": "Price and annual change labels (right-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'right'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "top",
+            "dy": 2,
+            "fontSize": 11,
+            "color": "#33475b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label_value"
+            }
+          }
+        },
+        {
+          "description": "Place name labels (center-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'center'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "bottom",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f2d3d"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "location"
+            }
+          }
+        },
+        {
+          "description": "Price and annual change labels (center-aligned).",
+          "transform": [
+            {
+              "filter": "show == 'All areas' || datum.area_type == show"
+            },
+            {
+              "filter": "datum.label_align == 'center'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "top",
+            "dy": 2,
+            "fontSize": 11,
+            "color": "#33475b"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label_value"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif",
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 11
+    }
+  }
+}

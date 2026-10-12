@@ -1,0 +1,222 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Choropleth map: median weekly rent for new lettings in each Victorian local government area (council), September quarter 2025.",
+  "title": {
+    "text": "What a new lease costs each week, by council",
+    "subtitle": [
+      "Median weekly rent for new leases, September quarter 2025. Hover a council for details.",
+      "Grey councils had too few new leases of that home type to report a median."
+    ],
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 460,
+  "projection": {
+    "type": "mercator"
+  },
+  "params": [
+    {
+      "name": "dwelling",
+      "value": "all",
+      "bind": {
+        "input": "select",
+        "name": "Home type: ",
+        "options": [
+          "all",
+          "flat1",
+          "flat2",
+          "flat3",
+          "house2",
+          "house3",
+          "house4"
+        ],
+        "labels": [
+          "All properties",
+          "1-bedroom flat",
+          "2-bedroom flat",
+          "3-bedroom flat",
+          "2-bedroom house",
+          "3-bedroom house",
+          "4-bedroom house"
+        ]
+      }
+    }
+  ],
+  "data": {
+    "url": "data/vic_lga_2022.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "lgas"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.lga",
+      "from": {
+        "data": {
+          "url": "data/vic_rents_by_lga_sep2025.csv"
+        },
+        "key": "lga"
+      },
+      "as": "r"
+    },
+    {
+      "calculate": "datum.properties.lga",
+      "as": "Council"
+    },
+    {
+      "calculate": "datum.r ? datum.r.region : 'Unincorporated area'",
+      "as": "Region"
+    },
+    {
+      "calculate": "datum.r && isValid(datum.r[dwelling]) && datum.r[dwelling] !== '' ? toNumber(datum.r[dwelling]) : null",
+      "as": "rent"
+    },
+    {
+      "calculate": "datum.r && isValid(datum.r[dwelling + '_2020']) && datum.r[dwelling + '_2020'] !== '' ? toNumber(datum.r[dwelling + '_2020']) : null",
+      "as": "rent2020"
+    },
+    {
+      "calculate": "datum.r && isValid(datum.r[dwelling + '_n']) && datum.r[dwelling + '_n'] !== '' ? toNumber(datum.r[dwelling + '_n']) : null",
+      "as": "lettings"
+    },
+    {
+      "calculate": "datum.rent != null ? '$' + format(datum.rent, ',') + ' per week' : 'Too few new leases to report'",
+      "as": "Median weekly rent"
+    },
+    {
+      "calculate": "datum.rent != null && datum.rent2020 != null ? (datum.rent >= datum.rent2020 ? '+' : '') + format((datum.rent - datum.rent2020) / datum.rent2020, '.0%') + ' (was $' + datum.rent2020 + ')' : 'Not available'",
+      "as": "Change since Sep 2020"
+    },
+    {
+      "calculate": "datum.lettings != null ? format(datum.lettings, ',') : 'Fewer than 5'",
+      "as": "New leases this quarter"
+    },
+    {
+      "calculate": "datum.rent == null ? null : datum.rent < 400 ? 'Under $400' : datum.rent < 450 ? '$400–$449' : datum.rent < 500 ? '$450–$499' : datum.rent < 550 ? '$500–$549' : datum.rent < 600 ? '$550–$599' : datum.rent < 700 ? '$600–$699' : '$700 or more'",
+      "as": "Rent band"
+    }
+  ],
+  "layer": [
+    {
+      "description": "Base layer: every council in light grey, so councils without enough data still appear.",
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e6e6e6",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "description": "Choropleth layer: councils shaded by median weekly rent for the selected home type.",
+      "transform": [
+        {
+          "filter": "datum.rent != null"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "Council"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "Rent band",
+          "type": "ordinal",
+          "title": "Median weekly rent",
+          "scale": {
+            "domain": [
+              "Under $400",
+              "$400–$449",
+              "$450–$499",
+              "$500–$549",
+              "$550–$599",
+              "$600–$699",
+              "$700 or more"
+            ],
+            "range": [
+              "#feeddc",
+              "#fdd8b3",
+              "#fdb57d",
+              "#fd8d3c",
+              "#e8601c",
+              "#c03b0a",
+              "#7f2704"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "columns": 7,
+            "symbolType": "square",
+            "symbolSize": 180,
+            "symbolStrokeWidth": 0,
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "columnPadding": 10
+          }
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 2
+          },
+          "value": 0.5
+        },
+        "stroke": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#222"
+          },
+          "value": "white"
+        },
+        "tooltip": [
+          {
+            "field": "Council",
+            "type": "nominal"
+          },
+          {
+            "field": "Region",
+            "type": "nominal"
+          },
+          {
+            "field": "Median weekly rent",
+            "type": "nominal"
+          },
+          {
+            "field": "Change since Sep 2020",
+            "type": "nominal"
+          },
+          {
+            "field": "New leases this quarter",
+            "type": "nominal"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}
