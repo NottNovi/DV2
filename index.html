@@ -18,19 +18,6 @@
     <p>A short introduction explaining the topic and question.</p>
 
     <section>
-      <h2>Starter map</h2>
-      <p>This is a basic world map to test the setup.</p>
-
-      <div id="map1"></div>
-
-      <p>
-        <a href="maps/starter-map.json">
-          View the map's JSON specification
-        </a>
-      </p>
-    </section>
-
-    <section>
       <h2>Where renting in Victoria costs the most</h2>
       <p>
         Each council is shaded by the median weekly rent paid on new leases in the
@@ -83,10 +70,6 @@
   </main>
 
   <script>
-    vegaEmbed("#map1", "maps/starter-map.json", {
-      actions: false
-    }).catch(console.error);
-
     vegaEmbed("#map2", "maps/rent-choropleth.json", {
       actions: false
     }).catch(console.error);
