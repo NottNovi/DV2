@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>My Visualisation Project</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+
+<body>
+  <main>
+    <h1>Cost of Living In Australia</h1>
+    <p>This dashboard explores the cost of living across Australia, focusing on rental costs, house prices, and international comparisons. It also provides insights into how these costs vary across different regions and over time.</p>
+
+    <section>
+      <h2>Where renting in Victoria costs the most</h2>
+      <p>
+        Each council is shaded by the median weekly rent paid on new leases in the
+        September quarter of 2025. Use the menu to switch between home types.
+      </p>
+
+      <div id="map2" class="vis"></div>
+
+      <p class="source">
+        Data: Homes Victoria (DFFH) Rental Report, quarterly median rents by local government area.
+        Boundaries: Australian Bureau of Statistics, LGA 2022 (ASGS Edition 3), via geoBoundaries, CC BY 4.0.
+        <br>
+      </p>
+    </section>
+    <section>
+      <h2>House prices: capital cities vs the rest of each state</h2>
+      <p>
+        Each circle's size shows the median house price, and its colour shows how much
+        values changed over the past 12 months. Use the buttons to compare capital cities
+        with the rest of each state.
+      </p>
+
+      <div id="map3" class="vis"></div>
+
+      <p class="source">
+        Data: median house prices and growth rates, 2026 (source to be confirmed).
+        Boundaries: Australian Bureau of Statistics, States and Territories 2021 (ASGS Edition 3), via geoBoundaries, CC BY 4.0.
+        <br>
+      </p>
+    </section>
+    <section>
+      <h2>How Australia compares with the rest of the world</h2>
+      <p>
+        Each country is scored against New York City, which is set at 100. Australia's
+        everyday prices rank 18th of 152 countries. Use the menu to compare rent, groceries,
+        eating out and what local wages can buy.
+      </p>
+
+      <div id="map4" class="vis"></div>
+
+      <p class="source">
+        Data: Cost of Living Index by Country 2026 (source to be confirmed).
+        Boundaries: Natural Earth 1:110m via world-atlas (public domain).
+        <br>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    vegaEmbed("#map2", "maps/rent-choropleth.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#map3", "maps/house-price-symbols.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#map4", "maps/cost-of-living-world.json", {
+      actions: false
+    }).catch(console.error);
+  </script>
+</body>
+</html>
