@@ -48,6 +48,22 @@
         <br>
       </p>
     </section>
+    <section>
+      <h2>How Australia compares with the rest of the world</h2>
+      <p>
+        Each country is scored against New York City, which is set at 100. Australia's
+        everyday prices rank 18th of 152 countries. Use the menu to compare rent, groceries,
+        eating out and what local wages can buy.
+      </p>
+
+      <div id="map4" class="vis"></div>
+
+      <p class="source">
+        Data: Cost of Living Index by Country 2026 (source to be confirmed).
+        Boundaries: Natural Earth 1:110m via world-atlas (public domain).
+        <br>
+      </p>
+    </section>
   </main>
 
   <script>
@@ -56,6 +72,10 @@
     }).catch(console.error);
 
     vegaEmbed("#map3", "maps/house-price-symbols.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#map4", "maps/cost-of-living-world.json", {
       actions: false
     }).catch(console.error);
   </script>
