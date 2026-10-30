@@ -1,0 +1,1057 @@
+lga,customer_type,year,month,total_kwh,customers,days
+Alpine,Business,2021,7,4698203,1424,31
+Alpine,Business,2021,8,4603834,1423,31
+Alpine,Business,2021,9,4118093,1436,30
+Alpine,Business,2021,10,4035805,1420,31
+Alpine,Business,2021,11,3942561,1435,30
+Alpine,Business,2021,12,3966916,1448,31
+Alpine,Business,2022,1,4466697,1445,31
+Alpine,Business,2022,2,4087354,1436,28
+Alpine,Business,2022,3,4598920,1433,31
+Alpine,Business,2022,4,4445935,1425,30
+Alpine,Business,2022,5,4754951,1425,31
+Alpine,Business,2022,6,4742920,1417,30
+Alpine,Residential,2021,7,7225992,7504,31
+Alpine,Residential,2021,8,6082883,7464,31
+Alpine,Residential,2021,9,4312676,7422,30
+Alpine,Residential,2021,10,3883818,7475,31
+Alpine,Residential,2021,11,3109804,7515,30
+Alpine,Residential,2021,12,2992312,7542,31
+Alpine,Residential,2022,1,3482021,7569,31
+Alpine,Residential,2022,2,2563549,7515,28
+Alpine,Residential,2022,3,2944676,7544,31
+Alpine,Residential,2022,4,3615773,7567,30
+Alpine,Residential,2022,5,4971843,7531,31
+Alpine,Residential,2022,6,6596594,7556,30
+Alpine,Solar,2021,7,191285,2048,31
+Alpine,Solar,2021,8,392866,2079,31
+Alpine,Solar,2021,9,675020,2089,30
+Alpine,Solar,2021,10,860892,2112,31
+Alpine,Solar,2021,11,866162,2126,30
+Alpine,Solar,2021,12,1108952,2144,31
+Alpine,Solar,2022,1,873279,2152,31
+Alpine,Solar,2022,2,923657,2161,28
+Alpine,Solar,2022,3,883647,2178,31
+Alpine,Solar,2022,4,486636,2196,30
+Alpine,Solar,2022,5,356541,2208,31
+Alpine,Solar,2022,6,180712,2199,30
+Banyule,Business,2021,7,5264210,1207,31
+Banyule,Business,2021,8,4730477,1209,31
+Banyule,Business,2021,9,4170699,1209,30
+Banyule,Business,2021,10,4318315,1213,31
+Banyule,Business,2021,11,4851769,1209,30
+Banyule,Business,2021,12,4837231,1202,31
+Banyule,Business,2022,1,5302474,1203,31
+Banyule,Business,2022,2,4847517,1208,28
+Banyule,Business,2022,3,5183265,1205,31
+Banyule,Business,2022,4,4630765,1206,30
+Banyule,Business,2022,5,5273498,1210,31
+Banyule,Business,2022,6,5399420,1214,30
+Banyule,Residential,2021,7,11654129,22942,31
+Banyule,Residential,2021,8,10452621,22935,31
+Banyule,Residential,2021,9,8696434,22938,30
+Banyule,Residential,2021,10,8087748,22944,31
+Banyule,Residential,2021,11,7283290,22942,30
+Banyule,Residential,2021,12,7646076,22950,31
+Banyule,Residential,2022,1,10709259,22946,31
+Banyule,Residential,2022,2,6941672,22954,28
+Banyule,Residential,2022,3,7271428,22911,31
+Banyule,Residential,2022,4,7115645,22887,30
+Banyule,Residential,2022,5,9748505,22995,31
+Banyule,Residential,2022,6,10943954,22994,30
+Banyule,Solar,2021,7,301874,3435,31
+Banyule,Solar,2021,8,532600,3480,31
+Banyule,Solar,2021,9,854797,3527,30
+Banyule,Solar,2021,10,1094653,3555,31
+Banyule,Solar,2021,11,1202895,3594,30
+Banyule,Solar,2021,12,1493847,3626,31
+Banyule,Solar,2022,1,1259589,3650,31
+Banyule,Solar,2022,2,1197670,3682,28
+Banyule,Solar,2022,3,1034492,3707,31
+Banyule,Solar,2022,4,647469,3735,30
+Banyule,Solar,2022,5,412077,3763,31
+Banyule,Solar,2022,6,270640,3778,30
+Bass Coast,Business,2021,7,6085181,2154,31
+Bass Coast,Business,2021,8,5516230,2150,31
+Bass Coast,Business,2021,9,4998825,2162,30
+Bass Coast,Business,2021,10,4996317,2160,31
+Bass Coast,Business,2021,11,5217400,2162,30
+Bass Coast,Business,2021,12,5140534,2158,31
+Bass Coast,Business,2022,1,6105385,2162,31
+Bass Coast,Business,2022,2,5175303,2157,28
+Bass Coast,Business,2022,3,5611451,2157,31
+Bass Coast,Business,2022,4,5349614,2160,30
+Bass Coast,Business,2022,5,5739120,2150,31
+Bass Coast,Business,2022,6,6013517,2158,30
+Bass Coast,Residential,2021,7,16084108,28698,31
+Bass Coast,Residential,2021,8,13165070,28344,31
+Bass Coast,Residential,2021,9,11113265,28258,30
+Bass Coast,Residential,2021,10,10385076,28824,31
+Bass Coast,Residential,2021,11,9463712,29177,30
+Bass Coast,Residential,2021,12,9191134,29345,31
+Bass Coast,Residential,2022,1,10627404,29424,31
+Bass Coast,Residential,2022,2,7485727,29246,28
+Bass Coast,Residential,2022,3,8443253,29345,31
+Bass Coast,Residential,2022,4,9674312,29437,30
+Bass Coast,Residential,2022,5,12463813,29204,31
+Bass Coast,Residential,2022,6,14705891,29298,30
+Bass Coast,Solar,2021,7,865204,6234,31
+Bass Coast,Solar,2021,8,1580322,6303,31
+Bass Coast,Solar,2021,9,2060796,6372,30
+Bass Coast,Solar,2021,10,2716943,6418,31
+Bass Coast,Solar,2021,11,3088538,6471,30
+Bass Coast,Solar,2021,12,3705324,6535,31
+Bass Coast,Solar,2022,1,3265124,6559,31
+Bass Coast,Solar,2022,2,3157045,6586,28
+Bass Coast,Solar,2022,3,2605516,6645,31
+Bass Coast,Solar,2022,4,1624069,6696,30
+Bass Coast,Solar,2022,5,1175665,6762,31
+Bass Coast,Solar,2022,6,877770,6804,30
+Baw Baw,Business,2021,7,13854807,3570,31
+Baw Baw,Business,2021,8,13594631,3553,31
+Baw Baw,Business,2021,9,13775464,3567,30
+Baw Baw,Business,2021,10,13934248,3558,31
+Baw Baw,Business,2021,11,14019509,3577,30
+Baw Baw,Business,2021,12,13994042,3597,31
+Baw Baw,Business,2022,1,14602383,3600,31
+Baw Baw,Business,2022,2,13626676,3602,28
+Baw Baw,Business,2022,3,14370590,3594,31
+Baw Baw,Business,2022,4,13039634,3569,30
+Baw Baw,Business,2022,5,13420313,3581,31
+Baw Baw,Business,2022,6,13601531,3562,30
+Baw Baw,Residential,2021,7,13604810,24030,31
+Baw Baw,Residential,2021,8,12345643,24071,31
+Baw Baw,Residential,2021,9,10364500,24202,30
+Baw Baw,Residential,2021,10,9833349,24297,31
+Baw Baw,Residential,2021,11,8809925,24371,30
+Baw Baw,Residential,2021,12,8599582,24397,31
+Baw Baw,Residential,2022,1,9647647,24441,31
+Baw Baw,Residential,2022,2,7667792,24500,28
+Baw Baw,Residential,2022,3,8358036,24550,31
+Baw Baw,Residential,2022,4,8877227,24569,30
+Baw Baw,Residential,2022,5,11808462,24717,31
+Baw Baw,Residential,2022,6,13513692,24772,30
+Baw Baw,Solar,2021,7,806929,6095,31
+Baw Baw,Solar,2021,8,1272159,6173,31
+Baw Baw,Solar,2021,9,1837557,6220,30
+Baw Baw,Solar,2021,10,2353296,6250,31
+Baw Baw,Solar,2021,11,2504903,6295,30
+Baw Baw,Solar,2021,12,3045242,6351,31
+Baw Baw,Solar,2022,1,2765342,6389,31
+Baw Baw,Solar,2022,2,2665323,6433,28
+Baw Baw,Solar,2022,3,2256198,6467,31
+Baw Baw,Solar,2022,4,1363458,6503,30
+Baw Baw,Solar,2022,5,1096059,6529,31
+Baw Baw,Solar,2022,6,663755,6557,30
+Benalla,Business,2021,7,7048839,1092,31
+Benalla,Business,2021,8,6755472,1089,31
+Benalla,Business,2021,9,6203957,1093,30
+Benalla,Business,2021,10,6267777,1087,31
+Benalla,Business,2021,11,6110171,1088,30
+Benalla,Business,2021,12,5424643,1088,31
+Benalla,Business,2022,1,5181245,1090,31
+Benalla,Business,2022,2,6227018,1076,28
+Benalla,Business,2022,3,6762643,1086,31
+Benalla,Business,2022,4,6066529,1083,30
+Benalla,Business,2022,5,6760357,1090,31
+Benalla,Business,2022,6,6061702,1086,30
+Benalla,Residential,2021,7,4195910,6883,31
+Benalla,Residential,2021,8,3720896,6874,31
+Benalla,Residential,2021,9,2907366,6879,30
+Benalla,Residential,2021,10,2630300,6895,31
+Benalla,Residential,2021,11,2281229,6915,30
+Benalla,Residential,2021,12,2585970,6917,31
+Benalla,Residential,2022,1,3271304,6916,31
+Benalla,Residential,2022,2,2472868,6906,28
+Benalla,Residential,2022,3,2379456,6924,31
+Benalla,Residential,2022,4,2341634,6916,30
+Benalla,Residential,2022,5,3303805,6938,31
+Benalla,Residential,2022,6,4008161,6956,30
+Benalla,Solar,2021,7,205801,2100,31
+Benalla,Solar,2021,8,436786,2120,31
+Benalla,Solar,2021,9,707536,2136,30
+Benalla,Solar,2021,10,909668,2147,31
+Benalla,Solar,2021,11,880448,2168,30
+Benalla,Solar,2021,12,1098008,2186,31
+Benalla,Solar,2022,1,839142,2191,31
+Benalla,Solar,2022,2,899891,2210,28
+Benalla,Solar,2022,3,865670,2215,31
+Benalla,Solar,2022,4,511841,2224,30
+Benalla,Solar,2022,5,365739,2230,31
+Benalla,Solar,2022,6,220418,2237,30
+Cardinia,Business,2021,7,21575042,4197,31
+Cardinia,Business,2021,8,20633546,4206,31
+Cardinia,Business,2021,9,17847767,4215,30
+Cardinia,Business,2021,10,17282452,4239,31
+Cardinia,Business,2021,11,16929741,4253,30
+Cardinia,Business,2021,12,16991422,4272,31
+Cardinia,Business,2022,1,18241590,4324,31
+Cardinia,Business,2022,2,17630970,4334,28
+Cardinia,Business,2022,3,18149294,4349,31
+Cardinia,Business,2022,4,16680242,4326,30
+Cardinia,Business,2022,5,19241122,4360,31
+Cardinia,Business,2022,6,19428748,4385,30
+Cardinia,Residential,2021,7,24361085,42962,31
+Cardinia,Residential,2021,8,21901907,43098,31
+Cardinia,Residential,2021,9,18753569,43175,30
+Cardinia,Residential,2021,10,17469278,43330,31
+Cardinia,Residential,2021,11,15833908,43450,30
+Cardinia,Residential,2021,12,15961620,43516,31
+Cardinia,Residential,2022,1,19837811,43573,31
+Cardinia,Residential,2022,2,14529552,43679,28
+Cardinia,Residential,2022,3,15575049,43746,31
+Cardinia,Residential,2022,4,15684231,43794,30
+Cardinia,Residential,2022,5,20915884,44029,31
+Cardinia,Residential,2022,6,23570839,44113,30
+Cardinia,Solar,2021,7,1459518,10338,31
+Cardinia,Solar,2021,8,2477461,10528,31
+Cardinia,Solar,2021,9,3444261,10721,30
+Cardinia,Solar,2021,10,4428692,10844,31
+Cardinia,Solar,2021,11,4754910,10954,30
+Cardinia,Solar,2021,12,5826883,11065,31
+Cardinia,Solar,2022,1,5255276,11134,31
+Cardinia,Solar,2022,2,5017693,11251,28
+Cardinia,Solar,2022,3,4140923,11379,31
+Cardinia,Solar,2022,4,2769572,11406,30
+Cardinia,Solar,2022,5,1999045,11476,31
+Cardinia,Solar,2022,6,1373207,11533,30
+Casey,Business,2021,7,30179518,4873,31
+Casey,Business,2021,8,27129887,4890,31
+Casey,Business,2021,9,24396260,4893,30
+Casey,Business,2021,10,25730451,4899,31
+Casey,Business,2021,11,27139149,4918,30
+Casey,Business,2021,12,27238008,4962,31
+Casey,Business,2022,1,30484741,4990,31
+Casey,Business,2022,2,28000121,5020,28
+Casey,Business,2022,3,29713389,5026,31
+Casey,Business,2022,4,27246421,5035,30
+Casey,Business,2022,5,30697158,5048,31
+Casey,Business,2022,6,31085356,5097,30
+Casey,Residential,2021,7,49081643,104466,31
+Casey,Residential,2021,8,43562493,104773,31
+Casey,Residential,2021,9,37389624,104999,30
+Casey,Residential,2021,10,34663405,105438,31
+Casey,Residential,2021,11,31633182,105706,30
+Casey,Residential,2021,12,32576380,105913,31
+Casey,Residential,2022,1,43844545,106134,31
+Casey,Residential,2022,2,30651731,106419,28
+Casey,Residential,2022,3,32395165,106735,31
+Casey,Residential,2022,4,31706312,106965,30
+Casey,Residential,2022,5,42473511,107424,31
+Casey,Residential,2022,6,48344358,107741,30
+Casey,Solar,2021,7,4670192,31740,31
+Casey,Solar,2021,8,8131669,32259,31
+Casey,Solar,2021,9,11015296,32754,30
+Casey,Solar,2021,10,14333225,33079,31
+Casey,Solar,2021,11,15272643,33390,30
+Casey,Solar,2021,12,18289593,33706,31
+Casey,Solar,2022,1,16481588,33848,31
+Casey,Solar,2022,2,15904904,34000,28
+Casey,Solar,2022,3,13234185,34309,31
+Casey,Solar,2022,4,8873974,34479,30
+Casey,Solar,2022,5,6181968,34763,31
+Casey,Solar,2022,6,4509001,34943,30
+Darebin,Business,2021,7,844562,118,31
+Darebin,Business,2021,8,781069,118,31
+Darebin,Business,2021,9,691694,117,30
+Darebin,Business,2021,10,716237,118,31
+Darebin,Business,2021,11,717078,117,30
+Darebin,Business,2021,12,677102,115,31
+Darebin,Business,2022,1,869561,117,31
+Darebin,Business,2022,2,712972,117,28
+Darebin,Business,2022,3,767888,113,31
+Darebin,Business,2022,4,685277,113,30
+Darebin,Business,2022,5,786419,110,31
+Darebin,Business,2022,6,835209,112,30
+Darebin,Residential,2021,7,1267230,2253,31
+Darebin,Residential,2021,8,1116951,2240,31
+Darebin,Residential,2021,9,922957,2231,30
+Darebin,Residential,2021,10,848535,2234,31
+Darebin,Residential,2021,11,772776,2232,30
+Darebin,Residential,2021,12,815954,2236,31
+Darebin,Residential,2022,1,1192653,2237,31
+Darebin,Residential,2022,2,759790,2257,28
+Darebin,Residential,2022,3,792516,2251,31
+Darebin,Residential,2022,4,760850,2244,30
+Darebin,Residential,2022,5,1043590,2256,31
+Darebin,Residential,2022,6,1193136,2256,30
+Darebin,Solar,2021,7,41444,434,31
+Darebin,Solar,2021,8,69951,439,31
+Darebin,Solar,2021,9,111030,442,30
+Darebin,Solar,2021,10,141108,449,31
+Darebin,Solar,2021,11,149761,449,30
+Darebin,Solar,2021,12,184786,451,31
+Darebin,Solar,2022,1,152776,449,31
+Darebin,Solar,2022,2,147836,453,28
+Darebin,Solar,2022,3,129605,459,31
+Darebin,Solar,2022,4,83032,460,30
+Darebin,Solar,2022,5,54052,464,31
+Darebin,Solar,2022,6,35717,466,30
+East Gippsland,Business,2021,7,10459501,3554,31
+East Gippsland,Business,2021,8,10111877,3570,31
+East Gippsland,Business,2021,9,9347323,3564,30
+East Gippsland,Business,2021,10,9694211,3580,31
+East Gippsland,Business,2021,11,9690045,3578,30
+East Gippsland,Business,2021,12,9618471,3595,31
+East Gippsland,Business,2022,1,10572009,3590,31
+East Gippsland,Business,2022,2,9637432,3599,28
+East Gippsland,Business,2022,3,10373919,3574,31
+East Gippsland,Business,2022,4,9562506,3556,30
+East Gippsland,Business,2022,5,10611221,3556,31
+East Gippsland,Business,2022,6,10748627,3575,30
+East Gippsland,Residential,2021,7,14804025,25000,31
+East Gippsland,Residential,2021,8,13832231,24974,31
+East Gippsland,Residential,2021,9,11386611,25001,30
+East Gippsland,Residential,2021,10,10696419,25160,31
+East Gippsland,Residential,2021,11,9883881,25260,30
+East Gippsland,Residential,2021,12,9364018,25353,31
+East Gippsland,Residential,2022,1,9517453,25365,31
+East Gippsland,Residential,2022,2,7794480,25294,28
+East Gippsland,Residential,2022,3,8794737,25352,31
+East Gippsland,Residential,2022,4,10011421,25379,30
+East Gippsland,Residential,2022,5,12361648,25337,31
+East Gippsland,Residential,2022,6,14873024,25367,30
+East Gippsland,Solar,2021,7,1272050,6703,31
+East Gippsland,Solar,2021,8,1606044,6771,31
+East Gippsland,Solar,2021,9,2158212,6833,30
+East Gippsland,Solar,2021,10,2806284,6891,31
+East Gippsland,Solar,2021,11,2518245,6945,30
+East Gippsland,Solar,2021,12,3169556,6998,31
+East Gippsland,Solar,2022,1,2633744,7029,31
+East Gippsland,Solar,2022,2,2607311,7068,28
+East Gippsland,Solar,2022,3,2404071,7097,31
+East Gippsland,Solar,2022,4,1687741,7116,30
+East Gippsland,Solar,2022,5,1543214,7166,31
+East Gippsland,Solar,2022,6,915117,7183,30
+Frankston,Business,2021,7,356423,22,31
+Frankston,Business,2021,8,348710,22,31
+Frankston,Business,2021,9,315430,22,30
+Frankston,Business,2021,10,218670,21,31
+Frankston,Business,2021,11,162918,21,30
+Frankston,Business,2021,12,135571,19,31
+Frankston,Business,2022,1,208279,20,31
+Frankston,Business,2022,2,191487,20,28
+Frankston,Business,2022,3,218011,20,31
+Frankston,Business,2022,4,183313,19,30
+Frankston,Business,2022,5,223803,19,31
+Frankston,Business,2022,6,235758,19,30
+Frankston,Residential,2021,7,24567,25,31
+Frankston,Residential,2021,8,23110,25,31
+Frankston,Residential,2021,9,17909,25,30
+Frankston,Residential,2021,10,18366,25,31
+Frankston,Residential,2021,11,15990,25,30
+Frankston,Residential,2021,12,14835,25,31
+Frankston,Residential,2022,1,14848,25,31
+Frankston,Residential,2022,2,12029,24,28
+Frankston,Residential,2022,3,11950,24,31
+Frankston,Residential,2022,4,14076,23,30
+Frankston,Residential,2022,5,21950,24,31
+Frankston,Residential,2022,6,22746,24,30
+Greater Dandenong,Business,2021,7,870762,80,31
+Greater Dandenong,Business,2021,8,874206,82,31
+Greater Dandenong,Business,2021,9,766534,81,30
+Greater Dandenong,Business,2021,10,778015,81,31
+Greater Dandenong,Business,2021,11,778942,82,30
+Greater Dandenong,Business,2021,12,723523,82,31
+Greater Dandenong,Business,2022,1,675682,81,31
+Greater Dandenong,Business,2022,2,733200,82,28
+Greater Dandenong,Business,2022,3,887186,82,31
+Greater Dandenong,Business,2022,4,671413,81,30
+Greater Dandenong,Business,2022,5,924728,82,31
+Greater Dandenong,Business,2022,6,929414,82,30
+Hume,Business,2021,7,1385403,49,31
+Hume,Business,2021,8,1355406,48,31
+Hume,Business,2021,9,1306466,48,30
+Hume,Business,2021,10,1268935,47,31
+Hume,Business,2021,11,1217803,47,30
+Hume,Business,2021,12,1224944,48,31
+Hume,Business,2022,1,1328667,48,31
+Hume,Business,2022,2,1246567,50,28
+Hume,Business,2022,3,1446637,54,31
+Hume,Business,2022,4,1233036,52,30
+Hume,Business,2022,5,1415449,53,31
+Hume,Business,2022,6,1428038,57,30
+Hume,Residential,2021,7,836492,2120,31
+Hume,Residential,2021,8,742520,2173,31
+Hume,Residential,2021,9,617587,2200,30
+Hume,Residential,2021,10,558863,2241,31
+Hume,Residential,2021,11,517262,2296,30
+Hume,Residential,2021,12,531361,2328,31
+Hume,Residential,2022,1,771464,2367,31
+Hume,Residential,2022,2,516700,2415,28
+Hume,Residential,2022,3,561279,2477,31
+Hume,Residential,2022,4,582466,2503,30
+Hume,Residential,2022,5,820365,2547,31
+Hume,Residential,2022,6,1020586,2563,30
+Hume,Solar,2021,7,167283,646,31
+Hume,Solar,2021,8,275696,669,31
+Hume,Solar,2021,9,378634,696,30
+Hume,Solar,2021,10,476823,712,31
+Hume,Solar,2021,11,506728,745,30
+Hume,Solar,2021,12,657068,769,31
+Hume,Solar,2022,1,595229,783,31
+Hume,Solar,2022,2,538166,800,28
+Hume,Solar,2022,3,495226,815,31
+Hume,Solar,2022,4,307912,822,30
+Hume,Solar,2022,5,251226,835,31
+Hume,Solar,2022,6,157814,844,30
+Indigo,Business,2021,7,5204152,1191,31
+Indigo,Business,2021,8,4789878,1207,31
+Indigo,Business,2021,9,4609079,1207,30
+Indigo,Business,2021,10,4718161,1217,31
+Indigo,Business,2021,11,4526938,1211,30
+Indigo,Business,2021,12,4665184,1222,31
+Indigo,Business,2022,1,5320178,1214,31
+Indigo,Business,2022,2,4741967,1210,28
+Indigo,Business,2022,3,5376254,1214,31
+Indigo,Business,2022,4,4599764,1213,30
+Indigo,Business,2022,5,5231269,1207,31
+Indigo,Business,2022,6,5092925,1200,30
+Indigo,Residential,2021,7,5837243,7529,31
+Indigo,Residential,2021,8,5136987,7537,31
+Indigo,Residential,2021,9,3931146,7550,30
+Indigo,Residential,2021,10,3555892,7584,31
+Indigo,Residential,2021,11,2956841,7591,30
+Indigo,Residential,2021,12,3025091,7594,31
+Indigo,Residential,2022,1,3627964,7597,31
+Indigo,Residential,2022,2,2770647,7586,28
+Indigo,Residential,2022,3,2872167,7598,31
+Indigo,Residential,2022,4,3163110,7603,30
+Indigo,Residential,2022,5,4460575,7613,31
+Indigo,Residential,2022,6,5532786,7610,30
+Indigo,Solar,2021,7,342337,3087,31
+Indigo,Solar,2021,8,665900,3115,31
+Indigo,Solar,2021,9,1043719,3146,30
+Indigo,Solar,2021,10,1341551,3169,31
+Indigo,Solar,2021,11,1250390,3184,30
+Indigo,Solar,2021,12,1622706,3200,31
+Indigo,Solar,2022,1,1278436,3209,31
+Indigo,Solar,2022,2,1370549,3229,28
+Indigo,Solar,2022,3,1304791,3259,31
+Indigo,Solar,2022,4,775439,3268,30
+Indigo,Solar,2022,5,605491,3281,31
+Indigo,Solar,2022,6,314608,3284,30
+Knox,Business,2021,7,31584466,5710,31
+Knox,Business,2021,8,29644564,5709,31
+Knox,Business,2021,9,26193742,5702,30
+Knox,Business,2021,10,26873519,5707,31
+Knox,Business,2021,11,27663442,5720,30
+Knox,Business,2021,12,26144286,5695,31
+Knox,Business,2022,1,29142362,5704,31
+Knox,Business,2022,2,27337829,5718,28
+Knox,Business,2022,3,29713728,5720,31
+Knox,Business,2022,4,25787108,5736,30
+Knox,Business,2022,5,29678597,5758,31
+Knox,Business,2022,6,30246413,5766,30
+Knox,Residential,2021,7,25959882,52771,31
+Knox,Residential,2021,8,23188558,52748,31
+Knox,Residential,2021,9,19649757,52771,30
+Knox,Residential,2021,10,18228262,52823,31
+Knox,Residential,2021,11,16513707,52835,30
+Knox,Residential,2021,12,17180214,52840,31
+Knox,Residential,2022,1,23447183,52809,31
+Knox,Residential,2022,2,15653655,52833,28
+Knox,Residential,2022,3,16602640,52843,31
+Knox,Residential,2022,4,16269459,52836,30
+Knox,Residential,2022,5,21734934,52952,31
+Knox,Residential,2022,6,24702442,52952,30
+Knox,Solar,2021,7,1078728,11232,31
+Knox,Solar,2021,8,1956316,11388,31
+Knox,Solar,2021,9,2989847,11490,30
+Knox,Solar,2021,10,4049353,11597,31
+Knox,Solar,2021,11,4383581,11716,30
+Knox,Solar,2021,12,5341380,11805,31
+Knox,Solar,2022,1,4806924,11900,31
+Knox,Solar,2022,2,4413199,11963,28
+Knox,Solar,2022,3,3761923,12045,31
+Knox,Solar,2022,4,2461126,12134,30
+Knox,Solar,2022,5,1580741,12192,31
+Knox,Solar,2022,6,969026,12239,30
+Latrobe,Business,2021,7,40667920,3720,31
+Latrobe,Business,2021,8,38585041,3719,31
+Latrobe,Business,2021,9,35628428,3712,30
+Latrobe,Business,2021,10,35961161,3706,31
+Latrobe,Business,2021,11,36993187,3716,30
+Latrobe,Business,2021,12,37833360,3710,31
+Latrobe,Business,2022,1,40275218,3717,31
+Latrobe,Business,2022,2,36906841,3711,28
+Latrobe,Business,2022,3,41011303,3707,31
+Latrobe,Business,2022,4,37601626,3712,30
+Latrobe,Business,2022,5,38939657,3716,31
+Latrobe,Business,2022,6,51401438,3727,30
+Latrobe,Residential,2021,7,18822167,34977,31
+Latrobe,Residential,2021,8,17359294,34979,31
+Latrobe,Residential,2021,9,14421087,35021,30
+Latrobe,Residential,2021,10,13538212,35082,31
+Latrobe,Residential,2021,11,11958626,35137,30
+Latrobe,Residential,2021,12,11664023,35157,31
+Latrobe,Residential,2022,1,12678851,35166,31
+Latrobe,Residential,2022,2,10495236,35193,28
+Latrobe,Residential,2022,3,11243752,35191,31
+Latrobe,Residential,2022,4,11883009,35167,30
+Latrobe,Residential,2022,5,15888887,35306,31
+Latrobe,Residential,2022,6,18696410,35362,30
+Latrobe,Solar,2021,7,1056902,7340,31
+Latrobe,Solar,2021,8,1467372,7398,31
+Latrobe,Solar,2021,9,2288626,7459,30
+Latrobe,Solar,2021,10,2823214,7515,31
+Latrobe,Solar,2021,11,2931093,7561,30
+Latrobe,Solar,2021,12,3656337,7596,31
+Latrobe,Solar,2022,1,3080234,7648,31
+Latrobe,Solar,2022,2,3007724,7709,28
+Latrobe,Solar,2022,3,2626412,7742,31
+Latrobe,Solar,2022,4,1740055,7799,30
+Latrobe,Solar,2022,5,1866746,7845,31
+Latrobe,Solar,2022,6,1241126,7890,30
+Manningham,Business,2021,7,811734,313,31
+Manningham,Business,2021,8,724556,307,31
+Manningham,Business,2021,9,621888,305,30
+Manningham,Business,2021,10,653096,304,31
+Manningham,Business,2021,11,719707,307,30
+Manningham,Business,2021,12,713644,311,31
+Manningham,Business,2022,1,774367,306,31
+Manningham,Business,2022,2,718167,305,28
+Manningham,Business,2022,3,780729,303,31
+Manningham,Business,2022,4,681052,303,30
+Manningham,Business,2022,5,868195,306,31
+Manningham,Business,2022,6,901162,308,30
+Manningham,Residential,2021,7,4514042,5105,31
+Manningham,Residential,2021,8,4093664,5107,31
+Manningham,Residential,2021,9,3449072,5108,30
+Manningham,Residential,2021,10,3197767,5110,31
+Manningham,Residential,2021,11,2934386,5114,30
+Manningham,Residential,2021,12,3098401,5111,31
+Manningham,Residential,2022,1,4028071,5111,31
+Manningham,Residential,2022,2,2834730,5103,28
+Manningham,Residential,2022,3,2971934,5094,31
+Manningham,Residential,2022,4,2908375,5071,30
+Manningham,Residential,2022,5,3888500,5100,31
+Manningham,Residential,2022,6,4211957,5101,30
+Manningham,Solar,2021,7,88440,1163,31
+Manningham,Solar,2021,8,169584,1182,31
+Manningham,Solar,2021,9,281745,1197,30
+Manningham,Solar,2021,10,378543,1203,31
+Manningham,Solar,2021,11,421612,1207,30
+Manningham,Solar,2021,12,513984,1214,31
+Manningham,Solar,2022,1,453899,1226,31
+Manningham,Solar,2022,2,413444,1239,28
+Manningham,Solar,2022,3,359479,1252,31
+Manningham,Solar,2022,4,208290,1262,30
+Manningham,Solar,2022,5,130685,1269,31
+Manningham,Solar,2022,6,77403,1275,30
+Mansfield,Business,2021,7,2266407,905,31
+Mansfield,Business,2021,8,1936218,900,31
+Mansfield,Business,2021,9,1599399,894,30
+Mansfield,Business,2021,10,1671761,901,31
+Mansfield,Business,2021,11,1598074,903,30
+Mansfield,Business,2021,12,1718114,903,31
+Mansfield,Business,2022,1,2043967,903,31
+Mansfield,Business,2022,2,1668925,897,28
+Mansfield,Business,2022,3,1754505,900,31
+Mansfield,Business,2022,4,1721865,896,30
+Mansfield,Business,2022,5,1956157,892,31
+Mansfield,Business,2022,6,2212235,903,30
+Mansfield,Residential,2021,7,4744390,6132,31
+Mansfield,Residential,2021,8,3962542,6063,31
+Mansfield,Residential,2021,9,3012972,6051,30
+Mansfield,Residential,2021,10,2826623,6174,31
+Mansfield,Residential,2021,11,2326719,6209,30
+Mansfield,Residential,2021,12,2354084,6231,31
+Mansfield,Residential,2022,1,2869063,6235,31
+Mansfield,Residential,2022,2,1968813,6169,28
+Mansfield,Residential,2022,3,2126239,6230,31
+Mansfield,Residential,2022,4,2651433,6262,30
+Mansfield,Residential,2022,5,3515843,6197,31
+Mansfield,Residential,2022,6,4417136,6256,30
+Mansfield,Solar,2021,7,189391,1600,31
+Mansfield,Solar,2021,8,372083,1620,31
+Mansfield,Solar,2021,9,629926,1639,30
+Mansfield,Solar,2021,10,802570,1655,31
+Mansfield,Solar,2021,11,855205,1674,30
+Mansfield,Solar,2021,12,1042896,1694,31
+Mansfield,Solar,2022,1,848143,1703,31
+Mansfield,Solar,2022,2,874598,1721,28
+Mansfield,Solar,2022,3,843285,1732,31
+Mansfield,Solar,2022,4,449906,1745,30
+Mansfield,Solar,2022,5,327598,1753,31
+Mansfield,Solar,2022,6,185881,1754,30
+Maroondah,Business,2021,7,23640920,4424,31
+Maroondah,Business,2021,8,22063266,4416,31
+Maroondah,Business,2021,9,19265971,4406,30
+Maroondah,Business,2021,10,19838678,4404,31
+Maroondah,Business,2021,11,21227140,4415,30
+Maroondah,Business,2021,12,21566464,4408,31
+Maroondah,Business,2022,1,23792844,4405,31
+Maroondah,Business,2022,2,21738034,4415,28
+Maroondah,Business,2022,3,23476183,4438,31
+Maroondah,Business,2022,4,20816608,4441,30
+Maroondah,Business,2022,5,23620519,4467,31
+Maroondah,Business,2022,6,23988252,4482,30
+Maroondah,Residential,2021,7,22803955,46749,31
+Maroondah,Residential,2021,8,20499372,46699,31
+Maroondah,Residential,2021,9,17155608,46680,30
+Maroondah,Residential,2021,10,15956004,46699,31
+Maroondah,Residential,2021,11,14380164,46726,30
+Maroondah,Residential,2021,12,14811162,46747,31
+Maroondah,Residential,2022,1,20196355,46763,31
+Maroondah,Residential,2022,2,13522810,46805,28
+Maroondah,Residential,2022,3,14223015,46820,31
+Maroondah,Residential,2022,4,14060529,46793,30
+Maroondah,Residential,2022,5,19130240,46901,31
+Maroondah,Residential,2022,6,21648290,46921,30
+Maroondah,Solar,2021,7,604873,7345,31
+Maroondah,Solar,2021,8,1124830,7453,31
+Maroondah,Solar,2021,9,1822122,7555,30
+Maroondah,Solar,2021,10,2466722,7617,31
+Maroondah,Solar,2021,11,2726427,7685,30
+Maroondah,Solar,2021,12,3319134,7775,31
+Maroondah,Solar,2022,1,2987575,7837,31
+Maroondah,Solar,2022,2,2724784,7911,28
+Maroondah,Solar,2022,3,2366398,7984,31
+Maroondah,Solar,2022,4,1463173,8023,30
+Maroondah,Solar,2022,5,928172,8088,31
+Maroondah,Solar,2022,6,560328,8106,30
+Mitchell,Business,2021,7,8365172,1564,31
+Mitchell,Business,2021,8,7897378,1557,31
+Mitchell,Business,2021,9,6532256,1565,30
+Mitchell,Business,2021,10,6936604,1572,31
+Mitchell,Business,2021,11,6946136,1557,30
+Mitchell,Business,2021,12,6656515,1559,31
+Mitchell,Business,2022,1,6415668,1558,31
+Mitchell,Business,2022,2,6951722,1563,28
+Mitchell,Business,2022,3,7466606,1563,31
+Mitchell,Business,2022,4,6937964,1563,30
+Mitchell,Business,2022,5,7746459,1584,31
+Mitchell,Business,2022,6,7493313,1582,30
+Mitchell,Residential,2021,7,11480596,18502,31
+Mitchell,Residential,2021,8,10092611,18594,31
+Mitchell,Residential,2021,9,8399975,18645,30
+Mitchell,Residential,2021,10,7771712,18762,31
+Mitchell,Residential,2021,11,6896678,18830,30
+Mitchell,Residential,2021,12,6840701,18863,31
+Mitchell,Residential,2022,1,8645179,18872,31
+Mitchell,Residential,2022,2,6251077,18965,28
+Mitchell,Residential,2022,3,6561287,19031,31
+Mitchell,Residential,2022,4,7047727,19042,30
+Mitchell,Residential,2022,5,9527153,19212,31
+Mitchell,Residential,2022,6,11005703,19266,30
+Mitchell,Solar,2021,7,534539,4966,31
+Mitchell,Solar,2021,8,1093030,5014,31
+Mitchell,Solar,2021,9,1640312,5062,30
+Mitchell,Solar,2021,10,2008553,5108,31
+Mitchell,Solar,2021,11,2209158,5169,30
+Mitchell,Solar,2021,12,2771888,5205,31
+Mitchell,Solar,2022,1,2418840,5246,31
+Mitchell,Solar,2022,2,2269817,5291,28
+Mitchell,Solar,2022,3,2101793,5326,31
+Mitchell,Solar,2022,4,1191565,5350,30
+Mitchell,Solar,2022,5,885151,5393,31
+Mitchell,Solar,2022,6,511821,5419,30
+Moira,Business,2021,7,12176,32,31
+Moira,Business,2021,8,11756,32,31
+Moira,Business,2021,9,10918,32,30
+Moira,Business,2021,10,11867,31,31
+Moira,Business,2021,11,11638,33,30
+Moira,Business,2021,12,12665,32,31
+Moira,Business,2022,1,13781,32,31
+Moira,Business,2022,2,12374,33,28
+Moira,Business,2022,3,12683,35,31
+Moira,Business,2022,4,12068,33,30
+Moira,Business,2022,5,11492,35,31
+Moira,Business,2022,6,10901,34,30
+Moira,Residential,2021,7,157102,187,31
+Moira,Residential,2021,8,138674,188,31
+Moira,Residential,2021,9,109224,190,30
+Moira,Residential,2021,10,103554,189,31
+Moira,Residential,2021,11,88802,190,30
+Moira,Residential,2021,12,95666,190,31
+Moira,Residential,2022,1,118621,189,31
+Moira,Residential,2022,2,95544,189,28
+Moira,Residential,2022,3,89908,188,31
+Moira,Residential,2022,4,89494,188,30
+Moira,Residential,2022,5,119520,187,31
+Moira,Residential,2022,6,148802,188,30
+Moira,Solar,2021,7,5037,49,31
+Moira,Solar,2021,8,9039,49,31
+Moira,Solar,2021,9,14343,50,30
+Moira,Solar,2021,10,19254,52,31
+Moira,Solar,2021,11,17536,51,30
+Moira,Solar,2021,12,20900,52,31
+Moira,Solar,2022,1,15303,52,31
+Moira,Solar,2022,2,16410,52,28
+Moira,Solar,2022,3,16480,52,31
+Moira,Solar,2022,4,10514,53,30
+Moira,Solar,2022,5,7750,53,31
+Moira,Solar,2022,6,4777,53,30
+Murrindindi,Business,2021,7,3097607,1402,31
+Murrindindi,Business,2021,8,2708705,1393,31
+Murrindindi,Business,2021,9,2402031,1410,30
+Murrindindi,Business,2021,10,2466875,1406,31
+Murrindindi,Business,2021,11,2705923,1418,30
+Murrindindi,Business,2021,12,3087842,1440,31
+Murrindindi,Business,2022,1,3343219,1441,31
+Murrindindi,Business,2022,2,2814084,1440,28
+Murrindindi,Business,2022,3,2895892,1431,31
+Murrindindi,Business,2022,4,2798388,1421,30
+Murrindindi,Business,2022,5,3097232,1407,31
+Murrindindi,Business,2022,6,3201784,1410,30
+Murrindindi,Residential,2021,7,6340819,7879,31
+Murrindindi,Residential,2021,8,5552823,7863,31
+Murrindindi,Residential,2021,9,4481472,7855,30
+Murrindindi,Residential,2021,10,4221539,7919,31
+Murrindindi,Residential,2021,11,3605897,7950,30
+Murrindindi,Residential,2021,12,3398255,7958,31
+Murrindindi,Residential,2022,1,3799492,7962,31
+Murrindindi,Residential,2022,2,2890289,7957,28
+Murrindindi,Residential,2022,3,3139956,7950,31
+Murrindindi,Residential,2022,4,3761802,7967,30
+Murrindindi,Residential,2022,5,5100317,7971,31
+Murrindindi,Residential,2022,6,5902532,7972,30
+Murrindindi,Solar,2021,7,164722,2169,31
+Murrindindi,Solar,2021,8,352734,2191,31
+Murrindindi,Solar,2021,9,581602,2207,30
+Murrindindi,Solar,2021,10,748089,2221,31
+Murrindindi,Solar,2021,11,832118,2226,30
+Murrindindi,Solar,2021,12,1055712,2243,31
+Murrindindi,Solar,2022,1,911826,2253,31
+Murrindindi,Solar,2022,2,864325,2259,28
+Murrindindi,Solar,2022,3,811025,2270,31
+Murrindindi,Solar,2022,4,426421,2277,30
+Murrindindi,Solar,2022,5,283440,2296,31
+Murrindindi,Solar,2022,6,145240,2298,30
+Nillumbik,Business,2021,7,7948410,1491,31
+Nillumbik,Business,2021,8,9756998,1495,31
+Nillumbik,Business,2021,9,6541839,1484,30
+Nillumbik,Business,2021,10,8491365,1495,31
+Nillumbik,Business,2021,11,9094547,1499,30
+Nillumbik,Business,2021,12,8679674,1503,31
+Nillumbik,Business,2022,1,7055104,1490,31
+Nillumbik,Business,2022,2,7332091,1492,28
+Nillumbik,Business,2022,3,8912871,1488,31
+Nillumbik,Business,2022,4,6456843,1477,30
+Nillumbik,Business,2022,5,9517427,1494,31
+Nillumbik,Business,2022,6,15534563,1495,30
+Nillumbik,Residential,2021,7,16209005,22530,31
+Nillumbik,Residential,2021,8,14655366,22526,31
+Nillumbik,Residential,2021,9,12142599,22525,30
+Nillumbik,Residential,2021,10,11270137,22558,31
+Nillumbik,Residential,2021,11,10227042,22557,30
+Nillumbik,Residential,2021,12,10548410,22562,31
+Nillumbik,Residential,2022,1,13830964,22561,31
+Nillumbik,Residential,2022,2,9504403,22552,28
+Nillumbik,Residential,2022,3,9995370,22550,31
+Nillumbik,Residential,2022,4,10031495,22553,30
+Nillumbik,Residential,2022,5,13736576,22609,31
+Nillumbik,Residential,2022,6,15273407,22623,30
+Nillumbik,Solar,2021,7,414440,4907,31
+Nillumbik,Solar,2021,8,749340,4972,31
+Nillumbik,Solar,2021,9,1182828,5033,30
+Nillumbik,Solar,2021,10,1524221,5075,31
+Nillumbik,Solar,2021,11,1714923,5113,30
+Nillumbik,Solar,2021,12,2118814,5160,31
+Nillumbik,Solar,2022,1,1835383,5200,31
+Nillumbik,Solar,2022,2,1713376,5254,28
+Nillumbik,Solar,2022,3,1485536,5294,31
+Nillumbik,Solar,2022,4,872885,5322,30
+Nillumbik,Solar,2022,5,577570,5349,31
+Nillumbik,Solar,2022,6,354667,5345,30
+South Gippsland,Business,2021,7,11953594,3206,31
+South Gippsland,Business,2021,8,12030043,3200,31
+South Gippsland,Business,2021,9,12044187,3197,30
+South Gippsland,Business,2021,10,12475343,3200,31
+South Gippsland,Business,2021,11,12269447,3215,30
+South Gippsland,Business,2021,12,12021026,3217,31
+South Gippsland,Business,2022,1,12160627,3215,31
+South Gippsland,Business,2022,2,10748428,3203,28
+South Gippsland,Business,2022,3,11832938,3207,31
+South Gippsland,Business,2022,4,11097429,3193,30
+South Gippsland,Business,2022,5,11776089,3180,31
+South Gippsland,Business,2022,6,10581434,3197,30
+South Gippsland,Residential,2021,7,10980179,16532,31
+South Gippsland,Residential,2021,8,9750280,16378,31
+South Gippsland,Residential,2021,9,8152879,16314,30
+South Gippsland,Residential,2021,10,7707617,16622,31
+South Gippsland,Residential,2021,11,6812634,16702,30
+South Gippsland,Residential,2021,12,6394516,16775,31
+South Gippsland,Residential,2022,1,6580549,16792,31
+South Gippsland,Residential,2022,2,5246652,16699,28
+South Gippsland,Residential,2022,3,5933005,16715,31
+South Gippsland,Residential,2022,4,6869452,16748,30
+South Gippsland,Residential,2022,5,8923482,16638,31
+South Gippsland,Residential,2022,6,10451605,16692,30
+South Gippsland,Solar,2021,7,563386,4487,31
+South Gippsland,Solar,2021,8,913050,4527,31
+South Gippsland,Solar,2021,9,1239119,4565,30
+South Gippsland,Solar,2021,10,1608460,4600,31
+South Gippsland,Solar,2021,11,1843034,4615,30
+South Gippsland,Solar,2021,12,2177228,4636,31
+South Gippsland,Solar,2022,1,1904406,4659,31
+South Gippsland,Solar,2022,2,1889079,4680,28
+South Gippsland,Solar,2022,3,1565888,4718,31
+South Gippsland,Solar,2022,4,923331,4731,30
+South Gippsland,Solar,2022,5,728917,4756,31
+South Gippsland,Solar,2022,6,470381,4754,30
+Strathbogie,Business,2021,7,2488807,1194,31
+Strathbogie,Business,2021,8,2275985,1196,31
+Strathbogie,Business,2021,9,2028326,1202,30
+Strathbogie,Business,2021,10,2027183,1202,31
+Strathbogie,Business,2021,11,2197282,1205,30
+Strathbogie,Business,2021,12,2463983,1204,31
+Strathbogie,Business,2022,1,3023597,1195,31
+Strathbogie,Business,2022,2,2618781,1202,28
+Strathbogie,Business,2022,3,2789166,1203,31
+Strathbogie,Business,2022,4,2446183,1206,30
+Strathbogie,Business,2022,5,2434619,1208,31
+Strathbogie,Business,2022,6,2512762,1193,30
+Strathbogie,Residential,2021,7,3833641,5365,31
+Strathbogie,Residential,2021,8,3276598,5369,31
+Strathbogie,Residential,2021,9,2576909,5365,30
+Strathbogie,Residential,2021,10,2350950,5394,31
+Strathbogie,Residential,2021,11,2028955,5406,30
+Strathbogie,Residential,2021,12,2141349,5414,31
+Strathbogie,Residential,2022,1,2653847,5408,31
+Strathbogie,Residential,2022,2,2010079,5414,28
+Strathbogie,Residential,2022,3,1951143,5418,31
+Strathbogie,Residential,2022,4,2065705,5431,30
+Strathbogie,Residential,2022,5,2936389,5446,31
+Strathbogie,Residential,2022,6,3526447,5445,30
+Strathbogie,Solar,2021,7,157928,1787,31
+Strathbogie,Solar,2021,8,354372,1806,31
+Strathbogie,Solar,2021,9,566659,1823,30
+Strathbogie,Solar,2021,10,716930,1837,31
+Strathbogie,Solar,2021,11,745743,1849,30
+Strathbogie,Solar,2021,12,917869,1845,31
+Strathbogie,Solar,2022,1,694845,1854,31
+Strathbogie,Solar,2022,2,712338,1859,28
+Strathbogie,Solar,2022,3,712289,1867,31
+Strathbogie,Solar,2022,4,413303,1879,30
+Strathbogie,Solar,2022,5,289344,1885,31
+Strathbogie,Solar,2022,6,160441,1888,30
+Towong,Business,2021,7,1238780,820,31
+Towong,Business,2021,8,1168315,830,31
+Towong,Business,2021,9,1118954,839,30
+Towong,Business,2021,10,1116811,837,31
+Towong,Business,2021,11,1082283,832,30
+Towong,Business,2021,12,1174459,838,31
+Towong,Business,2022,1,1257009,835,31
+Towong,Business,2022,2,1042026,831,28
+Towong,Business,2022,3,1137091,834,31
+Towong,Business,2022,4,1094574,819,30
+Towong,Business,2022,5,1232658,832,31
+Towong,Business,2022,6,1298226,828,30
+Towong,Residential,2021,7,2292037,3035,31
+Towong,Residential,2021,8,2036389,3026,31
+Towong,Residential,2021,9,1569471,3048,30
+Towong,Residential,2021,10,1463721,3056,31
+Towong,Residential,2021,11,1256786,3060,30
+Towong,Residential,2021,12,1235732,3066,31
+Towong,Residential,2022,1,1425820,3066,31
+Towong,Residential,2022,2,1118379,3056,28
+Towong,Residential,2022,3,1183445,3055,31
+Towong,Residential,2022,4,1344821,3022,30
+Towong,Residential,2022,5,1798882,3049,31
+Towong,Residential,2022,6,2152228,3046,30
+Towong,Solar,2021,7,126268,1124,31
+Towong,Solar,2021,8,233258,1125,31
+Towong,Solar,2021,9,355766,1137,30
+Towong,Solar,2021,10,457442,1144,31
+Towong,Solar,2021,11,422470,1145,30
+Towong,Solar,2021,12,563908,1149,31
+Towong,Solar,2022,1,447904,1154,31
+Towong,Solar,2022,2,469230,1156,28
+Towong,Solar,2022,3,459019,1165,31
+Towong,Solar,2022,4,268892,1170,30
+Towong,Solar,2022,5,205091,1172,31
+Towong,Solar,2022,6,111322,1180,30
+Wangaratta,Business,2021,7,11144754,2352,31
+Wangaratta,Business,2021,8,10974659,2348,31
+Wangaratta,Business,2021,9,10121758,2352,30
+Wangaratta,Business,2021,10,10308201,2367,31
+Wangaratta,Business,2021,11,10429643,2374,30
+Wangaratta,Business,2021,12,10434022,2384,31
+Wangaratta,Business,2022,1,11379985,2379,31
+Wangaratta,Business,2022,2,9558192,2371,28
+Wangaratta,Business,2022,3,11587266,2368,31
+Wangaratta,Business,2022,4,10481169,2354,30
+Wangaratta,Business,2022,5,10968923,2353,31
+Wangaratta,Business,2022,6,11309279,2353,30
+Wangaratta,Residential,2021,7,8414883,13470,31
+Wangaratta,Residential,2021,8,7401283,13475,31
+Wangaratta,Residential,2021,9,5753112,13486,30
+Wangaratta,Residential,2021,10,5161678,13516,31
+Wangaratta,Residential,2021,11,4502123,13534,30
+Wangaratta,Residential,2021,12,5162924,13531,31
+Wangaratta,Residential,2022,1,6702293,13547,31
+Wangaratta,Residential,2022,2,4967250,13560,28
+Wangaratta,Residential,2022,3,4795866,13576,31
+Wangaratta,Residential,2022,4,4698128,13583,30
+Wangaratta,Residential,2022,5,6565320,13612,31
+Wangaratta,Residential,2022,6,8036341,13633,30
+Wangaratta,Solar,2021,7,488564,4326,31
+Wangaratta,Solar,2021,8,1031956,4362,31
+Wangaratta,Solar,2021,9,1625336,4398,30
+Wangaratta,Solar,2021,10,2052116,4424,31
+Wangaratta,Solar,2021,11,1899342,4446,30
+Wangaratta,Solar,2021,12,2345074,4467,31
+Wangaratta,Solar,2022,1,1751647,4482,31
+Wangaratta,Solar,2022,2,1946052,4509,28
+Wangaratta,Solar,2022,3,1891779,4541,31
+Wangaratta,Solar,2022,4,1160214,4566,30
+Wangaratta,Solar,2022,5,893038,4569,31
+Wangaratta,Solar,2022,6,488368,4585,30
+Wellington,Business,2021,7,10632821,4187,31
+Wellington,Business,2021,8,11892094,4208,31
+Wellington,Business,2021,9,12015913,4177,30
+Wellington,Business,2021,10,12893121,4189,31
+Wellington,Business,2021,11,12893895,4199,30
+Wellington,Business,2021,12,14427682,4246,31
+Wellington,Business,2022,1,14553180,4249,31
+Wellington,Business,2022,2,13023848,4243,28
+Wellington,Business,2022,3,11934442,4232,31
+Wellington,Business,2022,4,10103393,4192,30
+Wellington,Business,2022,5,10740956,4196,31
+Wellington,Business,2022,6,10642415,4201,30
+Wellington,Residential,2021,7,12099982,22464,31
+Wellington,Residential,2021,8,11197816,22345,31
+Wellington,Residential,2021,9,9274596,22339,30
+Wellington,Residential,2021,10,8603951,22545,31
+Wellington,Residential,2021,11,7975866,22700,30
+Wellington,Residential,2021,12,7632741,22812,31
+Wellington,Residential,2022,1,7953596,22848,31
+Wellington,Residential,2022,2,6628980,22627,28
+Wellington,Residential,2022,3,7296431,22703,31
+Wellington,Residential,2022,4,8073196,22777,30
+Wellington,Residential,2022,5,10251983,22633,31
+Wellington,Residential,2022,6,12104619,22691,30
+Wellington,Solar,2021,7,1009865,5562,31
+Wellington,Solar,2021,8,1233923,5604,31
+Wellington,Solar,2021,9,1824820,5642,30
+Wellington,Solar,2021,10,2191213,5677,31
+Wellington,Solar,2021,11,2071366,5707,30
+Wellington,Solar,2021,12,2676182,5748,31
+Wellington,Solar,2022,1,2209913,5758,31
+Wellington,Solar,2022,2,2161481,5797,28
+Wellington,Solar,2022,3,1945733,5823,31
+Wellington,Solar,2022,4,1301335,5825,30
+Wellington,Solar,2022,5,1227124,5856,31
+Wellington,Solar,2022,6,739795,5876,30
+Whitehorse,Residential,2021,7,9331,15,31
+Whitehorse,Residential,2021,8,8134,15,31
+Whitehorse,Residential,2021,9,5903,15,30
+Whitehorse,Residential,2021,10,5468,15,31
+Whitehorse,Residential,2021,11,4956,15,30
+Whitehorse,Residential,2021,12,4229,15,31
+Whitehorse,Residential,2022,1,5813,16,31
+Whitehorse,Residential,2022,2,4119,16,28
+Whitehorse,Residential,2022,3,4305,16,31
+Whitehorse,Residential,2022,4,4899,16,30
+Whitehorse,Residential,2022,5,7279,16,31
+Whitehorse,Residential,2022,6,8389,16,30
+Whittlesea,Business,2021,7,41680111,6259,31
+Whittlesea,Business,2021,8,38811704,6289,31
+Whittlesea,Business,2021,9,35154462,6258,30
+Whittlesea,Business,2021,10,36574402,6298,31
+Whittlesea,Business,2021,11,38018627,6367,30
+Whittlesea,Business,2021,12,38148680,6397,31
+Whittlesea,Business,2022,1,42432247,6404,31
+Whittlesea,Business,2022,2,38023489,6437,28
+Whittlesea,Business,2022,3,41562202,6430,31
+Whittlesea,Business,2022,4,36696331,6404,30
+Whittlesea,Business,2022,5,40662698,6457,31
+Whittlesea,Business,2022,6,41819448,6490,30
+Whittlesea,Residential,2021,7,39080585,82280,31
+Whittlesea,Residential,2021,8,34879930,82482,31
+Whittlesea,Residential,2021,9,29475286,82586,30
+Whittlesea,Residential,2021,10,27348152,82879,31
+Whittlesea,Residential,2021,11,24715652,83093,30
+Whittlesea,Residential,2021,12,25699939,83210,31
+Whittlesea,Residential,2022,1,35701303,83229,31
+Whittlesea,Residential,2022,2,23821189,83428,28
+Whittlesea,Residential,2022,3,25160752,83654,31
+Whittlesea,Residential,2022,4,24841694,83770,30
+Whittlesea,Residential,2022,5,32949737,84130,31
+Whittlesea,Residential,2022,6,38036164,84303,30
+Whittlesea,Solar,2021,7,2652453,17298,31
+Whittlesea,Solar,2021,8,4454197,17576,31
+Whittlesea,Solar,2021,9,6354941,17860,30
+Whittlesea,Solar,2021,10,7873436,18031,31
+Whittlesea,Solar,2021,11,8384688,18232,30
+Whittlesea,Solar,2021,12,10469707,18428,31
+Whittlesea,Solar,2022,1,9298989,18622,31
+Whittlesea,Solar,2022,2,8584908,18761,28
+Whittlesea,Solar,2022,3,7482602,18836,31
+Whittlesea,Solar,2022,4,4762739,18851,30
+Whittlesea,Solar,2022,5,3501357,18950,31
+Whittlesea,Solar,2022,6,2374517,19195,30
+Wodonga,Business,2021,7,16383949,1713,31
+Wodonga,Business,2021,8,15485109,1720,31
+Wodonga,Business,2021,9,13869244,1720,30
+Wodonga,Business,2021,10,14088711,1720,31
+Wodonga,Business,2021,11,14496156,1720,30
+Wodonga,Business,2021,12,14210047,1713,31
+Wodonga,Business,2022,1,15681617,1718,31
+Wodonga,Business,2022,2,15705057,1715,28
+Wodonga,Business,2022,3,16649571,1715,31
+Wodonga,Business,2022,4,14290367,1715,30
+Wodonga,Business,2022,5,15818626,1708,31
+Wodonga,Business,2022,6,15246846,1701,30
+Wodonga,Residential,2021,7,9073518,18250,31
+Wodonga,Residential,2021,8,8094692,18297,31
+Wodonga,Residential,2021,9,6384695,18332,30
+Wodonga,Residential,2021,10,5682303,18369,31
+Wodonga,Residential,2021,11,5166718,18394,30
+Wodonga,Residential,2021,12,6303436,18417,31
+Wodonga,Residential,2022,1,8331471,18430,31
+Wodonga,Residential,2022,2,6168988,18462,28
+Wodonga,Residential,2022,3,6013610,18515,31
+Wodonga,Residential,2022,4,5264861,18513,30
+Wodonga,Residential,2022,5,7165886,18546,31
+Wodonga,Residential,2022,6,8681841,18594,30
+Wodonga,Solar,2021,7,704239,4997,31
+Wodonga,Solar,2021,8,1349982,5043,31
+Wodonga,Solar,2021,9,2052627,5119,30
+Wodonga,Solar,2021,10,2591775,5170,31
+Wodonga,Solar,2021,11,2446624,5171,30
+Wodonga,Solar,2021,12,3169093,5232,31
+Wodonga,Solar,2022,1,2482718,5270,31
+Wodonga,Solar,2022,2,2662750,5310,28
+Wodonga,Solar,2022,3,2568175,5356,31
+Wodonga,Solar,2022,4,1627380,5390,30
+Wodonga,Solar,2022,5,1315089,5428,31
+Wodonga,Solar,2022,6,678233,5451,30
+Yarra Ranges,Business,2021,7,21979599,5585,31
+Yarra Ranges,Business,2021,8,20125887,5587,31
+Yarra Ranges,Business,2021,9,17811905,5563,30
+Yarra Ranges,Business,2021,10,18236909,5586,31
+Yarra Ranges,Business,2021,11,19122820,5591,30
+Yarra Ranges,Business,2021,12,19414211,5611,31
+Yarra Ranges,Business,2022,1,22208206,5618,31
+Yarra Ranges,Business,2022,2,20394533,5634,28
+Yarra Ranges,Business,2022,3,21517178,5580,31
+Yarra Ranges,Business,2022,4,19415815,5562,30
+Yarra Ranges,Business,2022,5,21659429,5578,31
+Yarra Ranges,Business,2022,6,21989061,5586,30
+Yarra Ranges,Residential,2021,7,36720691,61091,31
+Yarra Ranges,Residential,2021,8,33339360,61110,31
+Yarra Ranges,Residential,2021,9,27982186,61089,30
+Yarra Ranges,Residential,2021,10,26293165,61181,31
+Yarra Ranges,Residential,2021,11,23497271,61199,30
+Yarra Ranges,Residential,2021,12,23706529,61244,31
+Yarra Ranges,Residential,2022,1,29909546,61203,31
+Yarra Ranges,Residential,2022,2,21186222,61222,28
+Yarra Ranges,Residential,2022,3,22588512,61189,31
+Yarra Ranges,Residential,2022,4,23423320,61070,30
+Yarra Ranges,Residential,2022,5,31178784,61365,31
+Yarra Ranges,Residential,2022,6,35018524,61412,30
+Yarra Ranges,Solar,2021,7,1082327,12335,31
+Yarra Ranges,Solar,2021,8,1929438,12508,31
+Yarra Ranges,Solar,2021,9,3041764,12616,30
+Yarra Ranges,Solar,2021,10,3992810,12706,31
+Yarra Ranges,Solar,2021,11,4469546,12799,30
+Yarra Ranges,Solar,2021,12,5469837,12930,31
+Yarra Ranges,Solar,2022,1,4814603,12982,31
+Yarra Ranges,Solar,2022,2,4407507,13084,28
+Yarra Ranges,Solar,2022,3,3804346,13186,31
+Yarra Ranges,Solar,2022,4,2268445,13226,30
+Yarra Ranges,Solar,2022,5,1499838,13281,31
+Yarra Ranges,Solar,2022,6,883230,13275,30

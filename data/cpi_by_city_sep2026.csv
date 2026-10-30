@@ -1,0 +1,97 @@
+period,category,label,city,annual_change_percent,australia_percent
+Sep 2026,All groups CPI,All groups (overall),Sydney,4.3,4.3
+Sep 2026,All groups CPI,All groups (overall),Melbourne,4,4.3
+Sep 2026,All groups CPI,All groups (overall),Brisbane,4.4,4.3
+Sep 2026,All groups CPI,All groups (overall),Adelaide,5,4.3
+Sep 2026,All groups CPI,All groups (overall),Perth,4.5,4.3
+Sep 2026,All groups CPI,All groups (overall),Hobart,5.3,4.3
+Sep 2026,All groups CPI,All groups (overall),Darwin,5.2,4.3
+Sep 2026,All groups CPI,All groups (overall),Canberra,4.7,4.3
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Sydney,3.4,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Melbourne,2.9,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Brisbane,3.7,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Adelaide,2.9,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Perth,3.2,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Hobart,3.5,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Darwin,3,3.2
+Sep 2026,Food and non-alcoholic beverages,Food & drinks,Canberra,2.7,3.2
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Sydney,4.3,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Melbourne,4.2,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Brisbane,4.6,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Adelaide,4,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Perth,4.1,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Hobart,5.2,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Darwin,5.7,4.3
+Sep 2026,Alcohol and tobacco,Alcohol & tobacco,Canberra,4.5,4.3
+Sep 2026,Clothing and footwear,Clothing,Sydney,0.7,0.4
+Sep 2026,Clothing and footwear,Clothing,Melbourne,-0.5,0.4
+Sep 2026,Clothing and footwear,Clothing,Brisbane,0.8,0.4
+Sep 2026,Clothing and footwear,Clothing,Adelaide,-0.1,0.4
+Sep 2026,Clothing and footwear,Clothing,Perth,1.9,0.4
+Sep 2026,Clothing and footwear,Clothing,Hobart,0,0.4
+Sep 2026,Clothing and footwear,Clothing,Darwin,3.4,0.4
+Sep 2026,Clothing and footwear,Clothing,Canberra,0.6,0.4
+Sep 2026,Housing,Housing,Sydney,5.8,5.2
+Sep 2026,Housing,Housing,Melbourne,3.8,5.2
+Sep 2026,Housing,Housing,Brisbane,5.4,5.2
+Sep 2026,Housing,Housing,Adelaide,7.3,5.2
+Sep 2026,Housing,Housing,Perth,5,5.2
+Sep 2026,Housing,Housing,Hobart,6.9,5.2
+Sep 2026,Housing,Housing,Darwin,7.6,5.2
+Sep 2026,Housing,Housing,Canberra,5.1,5.2
+Sep 2026,"Furnishings, household equipment and services",Household items,Sydney,0.5,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Melbourne,0.3,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Brisbane,1.6,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Adelaide,0,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Perth,1.1,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Hobart,1.3,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Darwin,1.4,0.8
+Sep 2026,"Furnishings, household equipment and services",Household items,Canberra,3.8,0.8
+Sep 2026,Health,Health,Sydney,3.6,3.7
+Sep 2026,Health,Health,Melbourne,3.9,3.7
+Sep 2026,Health,Health,Brisbane,3.7,3.7
+Sep 2026,Health,Health,Adelaide,4.4,3.7
+Sep 2026,Health,Health,Perth,3.6,3.7
+Sep 2026,Health,Health,Hobart,3.3,3.7
+Sep 2026,Health,Health,Darwin,0.3,3.7
+Sep 2026,Health,Health,Canberra,3.8,3.7
+Sep 2026,Transport,Transport,Sydney,8.3,8.7
+Sep 2026,Transport,Transport,Melbourne,8,8.7
+Sep 2026,Transport,Transport,Brisbane,8.3,8.7
+Sep 2026,Transport,Transport,Adelaide,10.6,8.7
+Sep 2026,Transport,Transport,Perth,10.4,8.7
+Sep 2026,Transport,Transport,Hobart,10.4,8.7
+Sep 2026,Transport,Transport,Darwin,10.6,8.7
+Sep 2026,Transport,Transport,Canberra,10.4,8.7
+Sep 2026,Communication,Phone & internet,Sydney,2.3,2.3
+Sep 2026,Communication,Phone & internet,Melbourne,2.3,2.3
+Sep 2026,Communication,Phone & internet,Brisbane,2.3,2.3
+Sep 2026,Communication,Phone & internet,Adelaide,2.3,2.3
+Sep 2026,Communication,Phone & internet,Perth,2.2,2.3
+Sep 2026,Communication,Phone & internet,Hobart,2.2,2.3
+Sep 2026,Communication,Phone & internet,Darwin,2.4,2.3
+Sep 2026,Communication,Phone & internet,Canberra,2.5,2.3
+Sep 2026,Recreation and culture,Recreation & culture,Sydney,3.9,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Melbourne,5.4,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Brisbane,3.2,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Adelaide,4,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Perth,5.5,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Hobart,5.4,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Darwin,5.8,4.5
+Sep 2026,Recreation and culture,Recreation & culture,Canberra,4.1,4.5
+Sep 2026,Education,Education,Sydney,4.5,4.7
+Sep 2026,Education,Education,Melbourne,4.7,4.7
+Sep 2026,Education,Education,Brisbane,4.7,4.7
+Sep 2026,Education,Education,Adelaide,4.2,4.7
+Sep 2026,Education,Education,Perth,5.3,4.7
+Sep 2026,Education,Education,Hobart,3.8,4.7
+Sep 2026,Education,Education,Darwin,3.4,4.7
+Sep 2026,Education,Education,Canberra,5.9,4.7
+Sep 2026,Insurance and financial services,Insurance & finance,Sydney,3.3,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Melbourne,4.2,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Brisbane,5,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Adelaide,7.9,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Perth,0.9,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Hobart,9.4,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Darwin,5.3,3.9
+Sep 2026,Insurance and financial services,Insurance & finance,Canberra,2.4,3.9

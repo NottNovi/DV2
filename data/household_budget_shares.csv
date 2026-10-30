@@ -1,0 +1,13 @@
+household,order,category,original_label,squares
+Low-income household,1,Housing,Housing & Rent / Mortgage,38
+Low-income household,2,Groceries & food,Groceries & Food,18
+Low-income household,3,Utilities,"Utilities (Gas, Electricity, Water)",12
+Low-income household,4,Transport,Transport & Fuel,14
+Low-income household,5,Health & insurance,Healthcare & Insurance,8
+Low-income household,6,Spending & leftover,Discretionary / Savings / Leftover,10
+High-income household,1,Housing,Housing Costs (Mortgage/Rates),18
+High-income household,2,Groceries & food,Groceries & Food,10
+High-income household,3,Utilities,Utilities & Communication,6
+High-income household,4,Transport,Transport & Insurance,9
+High-income household,6,Spending & leftover,Discretionary Spending & Luxury,32
+High-income household,7,Savings & investments,"Savings, Investments & Super",25

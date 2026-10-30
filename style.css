@@ -25,3 +25,343 @@ section {
 a {
   color: #175ca8;
 }
+
+/* ---------- Page opening (header, headline numbers, two-panel row) ---------- */
+
+main {
+  max-width: 1440px;
+  padding: 20px 16px;
+}
+
+section {
+  padding: 20px 22px;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 8px 0 8px;
+  letter-spacing: 0.5px;
+}
+
+.page-header .summary {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  max-width: 820px;
+  color: #444;
+  margin: 0;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.kpi {
+  background: white;
+  border: 2px solid #0B3C7A;
+  border-radius: 8px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0B3C7A;
+}
+
+.kpi-label {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.35;
+}
+
+.kpi-source {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 8px 0 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.panel {
+  min-width: 0;
+}
+
+.panel h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.6px;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-text {
+  border-top: 1px solid #e3e3e3;
+  padding-top: 12px;
+}
+
+.panel-text p {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.vis {
+  width: 100%;
+  min-width: 0;
+}
+
+.source {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.bridge {
+  margin: 28px 0 0;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+@media (max-width: 1180px) {
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .panel-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left column of the two-panel row: line chart panel with the waffle panel underneath */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.col > section,
+.two-col > section {
+  margin-top: 0;
+}
+
+/* Second part of the page: "How Expensive is it to live in Australia?" on a tinted background */
+.part-two {
+  background: #e3ebf4;
+  margin: 36px -16px 0;
+  padding: 28px 16px 32px;
+  border-radius: 12px;
+}
+
+.part-title {
+  font-size: 1.9rem;
+  margin: 0 0 6px;
+  color: #0B3C7A;
+}
+
+.part-two .bridge {
+  margin: 0 0 4px;
+}
+
+/* Top of the page: title, summary and headline numbers on a navy band */
+.hero {
+  background: linear-gradient(135deg, #0B3C7A 0%, #14528f 100%);
+  color: #ffffff;
+  margin: 0 -16px 28px;
+  padding: 36px 32px 26px;
+  border-radius: 12px;
+}
+
+.hero .eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #E69F00;
+  font-weight: bold;
+}
+
+.hero .page-header h1 {
+  color: #ffffff;
+  margin: 0 0 12px;
+  font-size: 2.6rem;
+}
+
+.hero .page-header .summary {
+  color: #dde7f3;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  max-width: 860px;
+}
+
+.hero .kpi-row {
+  margin-top: 28px;
+  gap: 18px;
+}
+
+.hero .kpi {
+  background: #ffffff;
+  border: none;
+  border-top: 5px solid #E69F00;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  padding: 18px 20px 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.hero .kpi-value {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  color: #0B3C7A;
+}
+
+.hero .kpi-label {
+  color: #333;
+  font-size: 0.92rem;
+}
+
+.hero .kpi-source {
+  color: #b9c9de;
+  margin-top: 14px;
+}
+
+/* Final part of the page: "How to cut your spending?" on a light warm background */
+.part-three {
+  background: #f6eedf;
+  margin: 28px -16px 0;
+  padding: 28px 16px 32px;
+  border-radius: 12px;
+}
+
+.part-three .part-title {
+  color: #8a4b00;
+}
+
+/* Conclusion */
+.conclusion {
+  margin-top: 28px;
+  border-left: 6px solid #E69F00;
+}
+
+.conclusion .eyebrow,
+.site-footer .eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #E69F00;
+  font-weight: bold;
+}
+
+.conclusion h2 {
+  margin-top: 0;
+  font-size: 1.7rem;
+  color: #0B3C7A;
+}
+
+.conclusion p,
+.conclusion li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.takeaways {
+  padding-left: 20px;
+}
+
+.takeaways li {
+  margin-bottom: 8px;
+}
+
+/* Footer: sources, author and AI declaration */
+.site-footer {
+  background: #172033;
+  color: #c9d3e1;
+  margin-top: 40px;
+  padding: 48px 16px 40px;
+}
+
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-footer h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #2e3a52;
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 40px;
+}
+
+.source-item h3 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.source-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.site-footer a {
+  color: #9cc8f0;
+}
+
+.source-pending h3 {
+  color: #E69F00;
+}
+
+.footer-author {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #2e3a52;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.footer-author p {
+  margin: 0 0 4px;
+}
+
+.author-name {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .source-grid {
+    grid-template-columns: 1fr;
+  }
+}

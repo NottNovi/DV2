@@ -1,0 +1,270 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Treemap: each rectangle is a CPI spending group. Area = share of the CPI basket (2025 weights); colour = annual price change to September 2026. Australia, weighted average of eight capital cities.",
+  "width": 650,
+  "height": 370,
+  "padding": 5,
+  "autosize": "pad",
+  "data": [
+    {
+      "name": "cpi",
+      "url": "data/cpi_groups_sep2026.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "weight_percent": "number",
+          "annual_change_percent": "number",
+          "contribution_points": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "formula",
+          "as": "band",
+          "expr": "datum.annual_change_percent < 2 ? 'Under 2%' : datum.annual_change_percent < 4 ? '2–4%' : datum.annual_change_percent < 6 ? '4–6%' : datum.annual_change_percent < 8 ? '6–8%' : '8% or more'"
+        },
+        {
+          "type": "formula",
+          "as": "dark",
+          "expr": "datum.annual_change_percent >= 6"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "source": "cpi",
+      "transform": [
+        {
+          "type": "nest",
+          "keys": []
+        },
+        {
+          "type": "treemap",
+          "field": "weight_percent",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "round": true,
+          "method": "squarify",
+          "ratio": 1.4,
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!datum.children"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Under 2%",
+        "2–4%",
+        "4–6%",
+        "6–8%",
+        "8% or more"
+      ],
+      "range": [
+        "#fef0d9",
+        "#fdcc8a",
+        "#fc8d59",
+        "#d7301f",
+        "#990000"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "title": "Price rise over the past year",
+      "symbolType": "square",
+      "symbolSize": 150,
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "symbolStrokeColor": "#999",
+      "symbolStrokeWidth": 0.5,
+      "columnPadding": 10
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "name": "cells",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "color",
+            "field": "band"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "tooltip": {
+            "signal": "{'Category': datum.category, 'Share of basket': format(datum.weight_percent, '.2f') + '% (2025 weights)', 'Price change, year to Sep 2026': '+' + format(datum.annual_change_percent, '.1f') + '%', 'Adds to overall inflation': format(datum.contribution_points, '.2f') + ' of the 4.3 percentage points'}"
+          }
+        },
+        "update": {
+          "strokeWidth": {
+            "value": 2
+          },
+          "zindex": {
+            "value": 0
+          }
+        },
+        "hover": {
+          "strokeWidth": {
+            "value": 4
+          },
+          "zindex": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "cells"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x + 8"
+          },
+          "y": {
+            "signal": "datum.y + 8"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "text": {
+            "signal": "datum.datum.short_label"
+          },
+          "fontSize": {
+            "signal": "datum.datum.weight_percent > 6 ? 13 : 11"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "signal": "datum.datum.dark ? 'white' : '#1f2d3d'"
+          },
+          "limit": {
+            "signal": "datum.x2 - datum.x - 14"
+          },
+          "opacity": {
+            "signal": "(datum.y2 - datum.y) > 30 ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "cells"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x + 8"
+          },
+          "y": {
+            "signal": "datum.y + (datum.datum.weight_percent > 6 ? 28 : 24)"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "text": {
+            "signal": "'+' + format(datum.datum.annual_change_percent, '.1f') + '% price rise'"
+          },
+          "fontSize": {
+            "signal": "datum.datum.weight_percent > 6 ? 12 : 10"
+          },
+          "fill": {
+            "signal": "datum.datum.dark ? 'white' : '#1f2d3d'"
+          },
+          "limit": {
+            "signal": "datum.x2 - datum.x - 14"
+          },
+          "opacity": {
+            "signal": "(datum.y2 - datum.y) > 46 ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "cells"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x + 8"
+          },
+          "y": {
+            "signal": "datum.y + (datum.datum.weight_percent > 6 ? 46 : 39)"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "text": {
+            "signal": "format(datum.datum.weight_percent, '.1f') + '% of basket'"
+          },
+          "fontSize": {
+            "signal": "datum.datum.weight_percent > 6 ? 12 : 10"
+          },
+          "fill": {
+            "signal": "datum.datum.dark ? 'white' : '#1f2d3d'"
+          },
+          "limit": {
+            "signal": "datum.x2 - datum.x - 14"
+          },
+          "opacity": {
+            "signal": "(datum.y2 - datum.y) > 62 ? 0.85 : 0"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial, sans-serif"
+  }
+}

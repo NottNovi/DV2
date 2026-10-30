@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My Visualisation Project</title>
+  <title>Cost of Living in Australia</title>
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
@@ -14,23 +14,145 @@
 
 <body>
   <main>
-    <h1>Cost of Living In Australia</h1>
-    <p>This dashboard explores the cost of living across Australia, focusing on rental costs, house prices, and international comparisons. It also provides insights into how these costs vary across different regions and over time.</p>
+    <div class="hero">
+      <header class="page-header">
+        <p class="eyebrow">A data story on prices, pay and housing</p>
+        <h1>Cost of Living in Australia</h1>
+        <p class="summary">
+          Australians are paying more for almost everything. Prices are 57% higher than in early
+          2010, and they rose another 4.3% in the past year alone. This page follows those rising costs
+          from the national picture down to rent, house prices, energy and the household budget, and
+          asks how far different pay packets stretch.
+        </p>
+      </header>
 
+      <div class="kpi-row">
+        <div class="kpi">
+          <span class="kpi-value">+4.3%</span>
+          <span class="kpi-label">Rise in consumer prices over the past year</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-value">+57%</span>
+          <span class="kpi-label">Higher prices than in early 2010</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-value">+5.2%</span>
+          <span class="kpi-label">Rise in housing costs, the biggest share of spending</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-value">+8.7%</span>
+          <span class="kpi-label">Rise in transport costs, the fastest of any category</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col">
+        <section class="panel">
+          <h2>How the cost of living has changed</h2>
+          <div class="panel-body">
+            <div id="chart6" class="vis"></div>
+            <div class="panel-text">
+              <p>For Australia, since early 2010, consumer prices have climbed by about 57%. The steepest rise came in between 2022 and 2023. Melbourne city has followed the trends of the national figures closely throughout. The Consumer Price Index measures overall prices across the eight capital cities. It is not an exact measure of every household's costs, because each household spends differently.</p>
+              <p> Overall, the cost of living has increased significantly over the past decade. And regular increases may help the economy however they put pressure on household budgets for Australianas.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Where every $100 goes: low vs high income</h2>
+          <div class="panel-body">
+            <div id="chart2" class="vis"></div>
+            <div class="panel-text">
+              <p>
+                This chart shows how low and high income households allocate every $100 of their budgets. 
+                Low income spends a larger share on essentials such as housing, food and utilities, leaving less for pleasure spending and little or nothing for savings. 
+                In contrast, high-income households allocate smaller shares to these necessities and more to savings and investments. 
+                This highlights unequal financial flexibility: rising living costs can place greater pressure on lower income households because they have less room in their budgets to absorb additional expenses. 
+                The chart compares budget proportions, not actual dollar spending, so a smaller share does not necessarily mean a household spends less overall.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Where spending meets rising prices</h2>
+          <div class="panel-body">
+            <div id="chart4" class="vis"></div>
+            <div class="panel-text">
+              <p>
+                This chart shows how different spending categories relates to Australia’s inflation this year (2026) up until September 2026, with box sizes representing their share of the CPI basket and colours showing their annual price increases. 
+                Housing accounts for the largest share at 21.4%, with prices rising 5.2%, while transport recorded the fastest increase at 8.7%. 
+                Food and drinks also represent a substantial share of the basket, with prices increasing 3.2%. In contrast, clothing and household items experienced much smaller increases. 
+                Overall, the chart highlights that cost-of-living pressures depend on both how quickly prices rise and how much of the household budget those expenses represent. 
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="panel">
+          <h2>How Earnings impact an individual's affordability</h2>
+          <div class="panel-body">
+            <div id="chart3" class="vis"></div>
+            <div class="panel-text">
+              <p>Living costs are only one part of affordability. Income also plays a crucial role in an individual's ability to afford these costs. This chart shows how earnings vary between occupations and pay levels, providing context for understanding who may find housing and other everyday expenses harder to afford.</p>
+              <p>From the data, it's clear that earnings can vary significantly across different occupations. It can be seen that many retail, hospitality, care and transport jobs stay below $90,000 even at senior level.</p>
+              <p>This would suggest that these workers may face greater challenges in affording basic necessities and that the increase in living costs will severely impact their purchasing power.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Where everyday costs are rising fastest</h2>
+          <div class="panel-body">
+            <div id="chart5" class="vis"></div>
+            <div class="panel-text">
+              <p>
+                This heatmap shows how annual price increases change across Australia’s capital cities and spending categories. 
+                Hobart recorded the highest overall increase at 5.3%, while Melbourne had the lowest at 4.0%. 
+                Transport prices rose sharply in every city, reaching 10.6% in Adelaide and Darwin, while housing increases ranged from 3.8% in Melbourne to 7.6% in Darwin. 
+                Clothing and household items generally experienced smaller changes, including some price falls. 
+                Overall, the chart highlights that cost-of-living pressures differ depending on location and spending patterns. 
+                It shows where prices are rising fastest not necessarily which cities are the most expensive to live in.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="part-two">
+      <h2 class="part-title">How Expensive is it to live in Australia?</h2>
+      <p class="bridge">The sections below explore how specific living expenses vary across Victoria and Australia.</p>
+
+    <section>
+      <h2>Which capital city is the most expensive?</h2>
+      <p>
+        This chart compares the cost-of-living rankings of seven Australian capital cities between 2024 and 2026. 
+        Sydney remained the most expensive, while Brisbane was ranked lowest among the cities shown. 
+        Canberra overtook Melbourne to become the second most expensive in 2025, while Adelaide moved from sixth to fourth by 2026.
+        Hobart dropped from fourth to sixth, and Perth finished where it started in fifth place. 
+        Overall, the chart highlights changes in cities relative positions of living cost and not the actual price differences. 
+        Please note A city falling in rank does not necessarily mean its living costs decreased; other cities may simply have become more expensive faster.
+
+      </p>
+
+      <div id="chart1" class="vis"></div>
+
+      <p class="source">
+       Rank 1 = most expensive.
+      </p>
+    </section>
     <section>
       <h2>Where renting in Victoria costs the most</h2>
       <p>
-        Each council is shaded by the median weekly rent paid on new leases in the
-        September quarter of 2025. Use the menu to switch between home types.
+        From the map below, you can see how median rents vary across Victoria's local government areas. The darker the colour, the higher the rent. Use the buttons to compare houses and units.
+        It can be seen that the highest rents are in inner Melbourne, with some areas averaging more than $600 a week for a house. In contrast, many regional areas have median rents below $400 a week.
       </p>
 
       <div id="map2" class="vis"></div>
-
-      <p class="source">
-        Data: Homes Victoria (DFFH) Rental Report, quarterly median rents by local government area.
-        Boundaries: Australian Bureau of Statistics, LGA 2022 (ASGS Edition 3), via geoBoundaries, CC BY 4.0.
-        <br>
-      </p>
     </section>
     <section>
       <h2>House prices: capital cities vs the rest of each state</h2>
@@ -41,12 +163,6 @@
       </p>
 
       <div id="map3" class="vis"></div>
-
-      <p class="source">
-        Data: median house prices and growth rates, 2026 (source to be confirmed).
-        Boundaries: Australian Bureau of Statistics, States and Territories 2021 (ASGS Edition 3), via geoBoundaries, CC BY 4.0.
-        <br>
-      </p>
     </section>
     <section>
       <h2>How Australia compares with the rest of the world</h2>
@@ -58,20 +174,129 @@
 
       <div id="map4" class="vis"></div>
 
-      <p class="source">
-        Data: Cost of Living Index by Country 2026 (source to be confirmed).
-        Boundaries: Natural Earth 1:110m via world-atlas (public domain).
-        <br>
+    </section>
+    </div>
+    <div class="part-three">
+      <h2 class="part-title">How to cut your spending?</h2>
+      <section>
+        <h2>Keeping the lights on: electricity use across eastern Victoria</h2>
+        <p>
+          Energy is one of the bills households can least avoid. Across the AusNet network in
+          eastern Victoria, homes in the cold high country use far more electricity in winter.
+          Alpine households average about 29 kWh a day, roughly two-thirds above the area
+          average. Switching to solar can significantly reduce electricity bills, as rooftop panels send excess power back to the grid in summer.
+        </p>
+
+        <div id="map5" class="vis"></div>
+      </section>
+    </div>
+    <section class="conclusion">
+      <p class="eyebrow">Conclusion</p>
+      <h2>What this means for Australians</h2>
+      <p>
+        The cost of living in Australia has risen steadily for more than a decade. Consumer prices are
+        about 57% higher than in early 2010, and they rose another 4.3% in the year to September 2026.
+      </p>
+      <ul class="takeaways">
+        <li><strong>Housing is the biggest pressure.</strong> It is the largest share of what households spend,
+          its prices rose 5.2% over the past year, and it added more to overall inflation than any other category.</li>
+        <li><strong>Where you live matters.</strong> Price rises differ between capital cities, and rents for new
+          leases in Victoria vary widely from council to council.</li>
+        <li><strong>Pay does not stretch equally.</strong> Many retail, hospitality, care and transport jobs pay below
+          $90,000 even at senior level, so rising essential costs take a bigger bite out of those budgets.</li>
+        <li><strong>Australia is among the more expensive countries.</strong> Its everyday prices rank 18th of the 152
+          countries compared.</li>
+      </ul>
+      <p>
+        Rising costs are hard to avoid, but knowing where they are growing fastest, from housing and transport
+        to energy use in colder regions, helps households plan where they can cut back.
       </p>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="eyebrow">Data &amp; attribution</p>
+      <h2>Sources</h2>
+
+      <div class="source-grid">
+        <div class="source-item">
+          <h3>Australian Bureau of Statistics</h3>
+          <p><a href="https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia">Consumer Price Index, Australia</a>,
+            September 2026. Table 2 (annual change by group), Table 4 (contribution to annual change),
+            Table 11 (annual change by capital city) and Table 17 (quarterly index numbers).</p>
+        </div>
+        <div class="source-item">
+          <h3>Australian Bureau of Statistics</h3>
+          <p><a href="https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/annual-weight-update-cpi-and-living-cost-indexes/latest-release">Annual weight update of the CPI and Living Cost Indexes</a>,
+            December 2024. 2025 expenditure weights for the eleven CPI groups.</p>
+        </div>
+        <div class="source-item">
+          <h3>Homes Victoria (DFFH)</h3>
+          <p><a href="https://www.dffh.vic.gov.au/publications/rental-report">Rental Report</a>:
+            quarterly median rents by local government area, September quarter 2025.</p>
+        </div>
+        <div class="source-item">
+          <h3>AusNet</h3>
+          <p><a href="https://www.ausnetservices.com.au/electricity/network-information/energy-usage-data">Energy usage data</a>:
+            energy consumption by local government area, July 2021 &ndash; June 2022 (published 23 February 2023).</p>
+        </div>
+        <div class="source-item">
+          <h3>Map boundaries</h3>
+          <p>Australian Bureau of Statistics, ASGS Edition 3 local government areas (2022) and states and territories
+            (2021), via <a href="https://www.geoboundaries.org/">geoBoundaries</a> (CC BY 4.0). World countries from
+            Natural Earth 1:110m via <a href="https://github.com/topojson/world-atlas">world-atlas</a> (public domain).
+            Boundaries simplified with Mapshaper.</p>
+        </div>
+        <div class="source-item">
+          <h3>Charts</h3>
+          <p>Built with <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>, <a href="https://vega.github.io/vega/">Vega</a>
+            and <a href="https://github.com/vega/vega-embed">Vega-Embed</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-author">
+        <p class="author-name">Joel George &middot; Student ID 33143390</p>
+        <p>FIT3179 Data Visualisation 2 &middot; October 2026</p>
+        <p>AI declaration: Perplexity was used to help source and reshape datasets, debug the Vega-Lite and Vega chart specifications, and refine and correct the explanatory text.</p>
+      </div>
+    </div>
+  </footer>
+
   <script>
+    vegaEmbed("#chart6", "charts/cpi-over-time-line.json", {
+      actions: false
+    }).catch(console.error);
+
     vegaEmbed("#map2", "maps/rent-choropleth.json", {
       actions: false
     }).catch(console.error);
 
     vegaEmbed("#map3", "maps/house-price-symbols.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart1", "charts/city-cost-of-living-bump.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart2", "charts/household-budget-waffle.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart4", "charts/cpi-treemap.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart5", "charts/cpi-city-heatmap.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#chart3", "charts/income-by-occupation-dumbbell.json", {
+      actions: false
+    }).catch(console.error);
+
+    vegaEmbed("#map5", "maps/energy-hexbin.json", {
       actions: false
     }).catch(console.error);
 

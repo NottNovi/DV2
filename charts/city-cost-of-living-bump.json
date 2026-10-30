@@ -1,0 +1,245 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Bump chart: cost of living ranking of seven Australian capital cities, 2024 to 2026 (1 = most expensive).",
+  "width": "container",
+  "height": 340,
+  "data": {
+    "url": "data/aus_city_cost_of_living_ranks.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.year)",
+      "as": "year"
+    },
+    {
+      "calculate": "toNumber(datum.rank)",
+      "as": "rank"
+    },
+    {
+      "window": [
+        {
+          "op": "first_value",
+          "field": "rank",
+          "as": "rank_2024"
+        },
+        {
+          "op": "last_value",
+          "field": "rank",
+          "as": "rank_2026"
+        }
+      ],
+      "groupby": [
+        "city"
+      ],
+      "sort": [
+        {
+          "field": "year"
+        }
+      ],
+      "frame": [
+        null,
+        null
+      ]
+    },
+    {
+      "calculate": "datum.rank_2024 - datum.rank_2026",
+      "as": "moved"
+    },
+    {
+      "calculate": "datum.moved > 0 ? 'Up ' + datum.moved + (datum.moved == 1 ? ' place' : ' places') + ' (more expensive)' : datum.moved < 0 ? 'Down ' + abs(datum.moved) + (abs(datum.moved) == 1 ? ' place' : ' places') + ' (less expensive)' : 'No change'",
+      "as": "Change 2024–2026"
+    },
+    {
+      "calculate": "datum.city",
+      "as": "City"
+    },
+    {
+      "calculate": "'#' + datum.rank",
+      "as": "Rank"
+    },
+    {
+      "calculate": "datum.year + ''",
+      "as": "Year"
+    },
+    {
+      "calculate": "datum.driver",
+      "as": "What changed"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 13,
+        "labelFontWeight": "bold",
+        "domain": false,
+        "ticks": false,
+        "orient": "top",
+        "labelPadding": 8
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "ordinal",
+      "title": null,
+      "scale": {
+        "domain": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "axis": null
+    },
+    "color": {
+      "field": "city",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Sydney",
+          "Canberra",
+          "Melbourne",
+          "Adelaide",
+          "Perth",
+          "Hobart",
+          "Brisbane"
+        ],
+        "range": [
+          "#D55E00",
+          "#882255",
+          "#0072B2",
+          "#E69F00",
+          "#56B4E9",
+          "#AAAAAA",
+          "#3D3D3D"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "pick",
+        "value": 1
+      },
+      "value": 0.15
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "interpolate": "monotone",
+        "strokeCap": "round"
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 260,
+        "stroke": "white",
+        "strokeWidth": 2,
+        "opacity": 1
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "City"
+          },
+          {
+            "field": "Year"
+          },
+          {
+            "field": "Rank"
+          },
+          {
+            "field": "Change 2024–2026"
+          },
+          {
+            "field": "What changed"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "pick",
+          "select": {
+            "type": "point",
+            "fields": [
+              "city"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout",
+            "nearest": true
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "color": "white",
+        "fontSize": 10,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "rank"
+        },
+        "color": {
+          "value": "white"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2026"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 16,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "city"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == 2024"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -16,
+        "fontSize": 13
+      },
+      "encoding": {
+        "text": {
+          "field": "city"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}

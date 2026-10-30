@@ -1,0 +1,311 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Dumbbell chart: yearly pay range for 30 Australian occupations, from entry level to senior level (90th percentile), with the median marked. Grouped by sector.",
+  "title": {
+    "text": "",
+    "subtitle": "Yearly pay before tax. Hover a row for exact figures.",
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "data": {
+    "url": "data/income_by_occupation.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.entry)",
+      "as": "entry"
+    },
+    {
+      "calculate": "datum.median === '' || datum.median == null ? null : toNumber(datum.median)",
+      "as": "median"
+    },
+    {
+      "calculate": "toNumber(datum.senior)",
+      "as": "senior"
+    },
+    {
+      "calculate": "toNumber(datum.senior_open_ended) == 1",
+      "as": "open"
+    },
+    {
+      "calculate": "indexof([\"Retail & Hospitality\", \"Logistics & Transport\", \"Healthcare & Community\", \"Corporate & Finance\", \"Education & Public Sector\", \"Trades & Construction\", \"IT & Technology\"], datum.sector)",
+      "as": "sector_order"
+    },
+    {
+      "calculate": "datum.occupation",
+      "as": "Occupation"
+    },
+    {
+      "calculate": "datum.sector",
+      "as": "Sector"
+    },
+    {
+      "calculate": "'$' + format(datum.entry, ',')",
+      "as": "Entry level"
+    },
+    {
+      "calculate": "datum.median == null ? 'Not given in data' : '$' + format(datum.median, ',')",
+      "as": "Median"
+    },
+    {
+      "calculate": "'$' + format(datum.senior, ',') + (datum.open ? ' or more' : '')",
+      "as": "Senior level"
+    },
+    {
+      "calculate": "'$' + format(datum.senior - datum.entry, ',') + (datum.open ? ' or more' : '')",
+      "as": "Pay gap, entry to senior"
+    }
+  ],
+  "facet": {
+    "row": {
+      "field": "sector",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Retail & Hospitality",
+        "Logistics & Transport",
+        "Healthcare & Community",
+        "Corporate & Finance",
+        "Education & Public Sector",
+        "Trades & Construction",
+        "IT & Technology"
+      ],
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "left",
+        "labelAnchor": "start",
+        "labelOrient": "top",
+        "labelFontSize": 11,
+        "labelFontWeight": "bold",
+        "labelColor": "#1f2d3d",
+        "labelPadding": 4
+      }
+    }
+  },
+  "spacing": 6,
+  "spec": {
+    "width": 520,
+    "height": {
+      "step": 15
+    },
+    "encoding": {
+      "y": {
+        "field": "occupation",
+        "type": "nominal",
+        "title": null,
+        "sort": {
+          "field": "senior",
+          "order": "ascending"
+        },
+        "axis": {
+          "labelFontSize": 10,
+          "domain": false,
+          "ticks": false,
+          "labelPadding": 6,
+          "labelLimit": 160
+        }
+      },
+      "tooltip": [
+        {
+          "field": "Occupation"
+        },
+        {
+          "field": "Sector"
+        },
+        {
+          "field": "Entry level"
+        },
+        {
+          "field": "Median"
+        },
+        {
+          "field": "Senior level"
+        },
+        {
+          "field": "Pay gap, entry to senior"
+        }
+      ]
+    },
+    "layer": [
+      {
+        "description": "Faint full-width guide line so each row is easy to follow.",
+        "mark": {
+          "type": "rule",
+          "color": "#eeeeee",
+          "strokeWidth": 8
+        },
+        "encoding": {
+          "x": {
+            "datum": 0,
+            "type": "quantitative"
+          },
+          "x2": {
+            "datum": 400000
+          }
+        }
+      },
+      {
+        "description": "Bar connecting entry and senior pay.",
+        "mark": {
+          "type": "rule",
+          "color": "#b7c4d1",
+          "strokeWidth": 3
+        },
+        "encoding": {
+          "x": {
+            "field": "entry",
+            "type": "quantitative",
+            "title": "Yearly pay before tax",
+            "scale": {
+              "domain": [
+                0,
+                400000
+              ]
+            },
+            "axis": {
+              "values": [
+                0,
+                100000,
+                200000,
+                300000,
+                400000
+              ],
+              "grid": true,
+              "gridColor": "#e5e5e5",
+              "orient": "top",
+              "labelFontSize": 10,
+              "titleFontSize": 12,
+              "titleColor": "#555",
+              "title": null,
+              "labelExpr": "'$' + format(datum.value / 1000, ',.0f') + 'k'"
+            }
+          },
+          "x2": {
+            "field": "senior"
+          }
+        }
+      },
+      {
+        "description": "Arrow tip for open-ended senior pay (e.g. $380,000+).",
+        "transform": [
+          {
+            "filter": "datum.open"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "text": "▶",
+          "fontSize": 10,
+          "dx": 11,
+          "color": "#0B3C7A"
+        },
+        "encoding": {
+          "x": {
+            "field": "senior",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "circle",
+          "size": 60,
+          "opacity": 1,
+          "stroke": "white",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "entry",
+            "type": "quantitative"
+          },
+          "color": {
+            "datum": "Entry level",
+            "scale": {
+              "domain": [
+                "Entry level",
+                "Median (typical) pay",
+                "Senior level (top 10%)"
+              ],
+              "range": [
+                "#56B4E9",
+                "#D55E00",
+                "#0B3C7A"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "circle",
+          "size": 60,
+          "opacity": 1,
+          "stroke": "white",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "senior",
+            "type": "quantitative"
+          },
+          "color": {
+            "datum": "Senior level (top 10%)"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.median != null"
+          }
+        ],
+        "mark": {
+          "type": "tick",
+          "thickness": 2.5,
+          "size": 11,
+          "opacity": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "median",
+            "type": "quantitative"
+          },
+          "color": {
+            "datum": "Median (typical) pay"
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif",
+    "range": {
+      "category": [
+        "#56B4E9",
+        "#D55E00",
+        "#0B3C7A"
+      ]
+    },
+    "legend": {
+      "orient": "top",
+      "title": null,
+      "labelFontSize": 11,
+      "symbolSize": 80,
+      "columns": 3,
+      "rowPadding": 2
+    },
+    "axis": {
+      "labelColor": "#333"
+    }
+  }
+}

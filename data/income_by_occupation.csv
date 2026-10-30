@@ -1,0 +1,31 @@
+sector,occupation,entry,median,senior,senior_open_ended
+Retail & Hospitality,Sales Assistant,52300,64500,82000,0
+Retail & Hospitality,Barista / Cafe Attendant,52000,62000,74000,0
+Retail & Hospitality,Chef,56000,,95000,0
+Retail & Hospitality,Store Manager,60000,78000,105000,0
+Trades & Construction,Apprentice Electrician,45000,58000,72000,0
+Trades & Construction,Qualified Electrician,78000,114000,165000,0
+Trades & Construction,Plumber,75000,110000,155000,0
+Trades & Construction,Carpenter,68000,92000,130000,0
+Trades & Construction,Construction Manager,110000,195000,260000,1
+Healthcare & Community,Childcare Worker,54000,69700,85000,0
+Healthcare & Community,Aged Care Worker,56500,68000,84500,0
+Healthcare & Community,Registered Nurse,78500,114000,142000,0
+Healthcare & Community,Physiotherapist,76000,95000,132000,0
+Healthcare & Community,General Practitioner (GP),140000,240000,380000,1
+Education & Public Sector,Primary School Teacher,76000,99100,124000,0
+Education & Public Sector,Secondary School Teacher,77200,102000,128000,0
+Education & Public Sector,University Lecturer,94000,128000,175000,0
+Corporate & Finance,Receptionist / Admin,53000,66000,81000,0
+Corporate & Finance,Accountant,70000,96000,140000,0
+Corporate & Finance,HR Generalist,72000,98000,135000,0
+Corporate & Finance,Marketing Coordinator,65000,88000,120000,0
+Corporate & Finance,Management Consultant,85000,135000,195000,0
+Corporate & Finance,Financial Analyst,80000,122000,180000,0
+IT & Technology,Helpdesk Support Technician,58000,74000,95000,0
+IT & Technology,Software Developer,85000,131900,190000,0
+IT & Technology,Data Scientist,98000,142000,195000,0
+IT & Technology,Cybersecurity Specialist,105000,155000,210000,0
+Logistics & Transport,Delivery Van Driver,53500,67000,82000,0
+Logistics & Transport,Forklift Operator,56000,71500,89000,0
+Logistics & Transport,Heavy Rigid (HR) Truck Driver,64000,87000,118000,0

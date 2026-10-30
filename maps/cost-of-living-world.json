@@ -1,17 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "World choropleth map of the 2026 cost of living index by country (New York = 100), with Australia highlighted. Small countries and territories are shown as dots.",
-  "title": {
-    "text": "How Australia's cost of living compares with the world",
-    "subtitle": [
-      "Each country is scored against New York City (= 100): a score of 70 means prices about 30% lower than New York.",
-      "Choose a measure below. Small countries are shown as dots; grey countries have no data. Hover for details."
-    ],
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 13,
-    "subtitleColor": "#555"
-  },
   "width": "container",
   "height": 470,
   "projection": {

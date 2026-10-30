@@ -1,0 +1,318 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Line chart: All groups CPI for Australia (weighted average of eight capital cities) and Melbourne, quarterly from March quarter 2010 to September quarter 2026, rebased so March quarter 2010 = 100.",
+  "title": {
+    "text": "",
+    "subtitle": [
+      "Consumer Price Index (all groups), March quarter 2010 = 100.",
+      "150 means prices are 50% higher than in early 2010."
+    ],
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "width": "container",
+  "height": 280,
+  "data": {
+    "url": "data/cpi_quarterly_index_2010_2026.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.index)",
+      "as": "index"
+    },
+    {
+      "calculate": "toDate(datum.quarter_end)",
+      "as": "date"
+    },
+    {
+      "window": [
+        {
+          "op": "first_value",
+          "field": "index",
+          "as": "base"
+        }
+      ],
+      "groupby": [
+        "region"
+      ],
+      "sort": [
+        {
+          "field": "date"
+        }
+      ],
+      "frame": [
+        null,
+        null
+      ]
+    },
+    {
+      "calculate": "datum.index / datum.base * 100",
+      "as": "rebased"
+    },
+    {
+      "window": [
+        {
+          "op": "lag",
+          "field": "index",
+          "param": 4,
+          "as": "index_yr_ago"
+        }
+      ],
+      "groupby": [
+        "region"
+      ],
+      "sort": [
+        {
+          "field": "date"
+        }
+      ]
+    },
+    {
+      "calculate": "['Mar','Jun','Sep','Dec'][floor(month(datum.date)/3)] + ' quarter ' + year(datum.date)",
+      "as": "quarter_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {
+        "format": "%Y",
+        "grid": false,
+        "labelFontSize": 11,
+        "values": [
+          {
+            "year": 2010,
+            "month": 1,
+            "date": 1
+          },
+          {
+            "year": 2014,
+            "month": 1,
+            "date": 1
+          },
+          {
+            "year": 2018,
+            "month": 1,
+            "date": 1
+          },
+          {
+            "year": 2022,
+            "month": 1,
+            "date": 1
+          },
+          {
+            "year": 2026,
+            "month": 1,
+            "date": 1
+          }
+        ]
+      },
+      "scale": {
+        "domain": [
+          {
+            "year": 2010,
+            "month": 1,
+            "date": 1
+          },
+          {
+            "year": 2026,
+            "month": 12,
+            "date": 31
+          }
+        ]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "y": {
+          "field": "rebased",
+          "type": "quantitative",
+          "title": "Price level (2010 = 100)",
+          "scale": {
+            "domain": [
+              0,
+              170
+            ],
+            "zero": true
+          },
+          "axis": {
+            "titleFontSize": 12,
+            "titleColor": "#555",
+            "labelFontSize": 11,
+            "gridColor": "#ececec",
+            "values": [
+              0,
+              20,
+              40,
+              60,
+              80,
+              100,
+              120,
+              140,
+              160
+            ]
+          }
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Melbourne"
+            ],
+            "range": [
+              "#0B3C7A",
+              "#E69F00"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "title": null,
+            "labelFontSize": 12,
+            "symbolStrokeWidth": 3,
+            "symbolSize": 300
+          }
+        },
+        "strokeDash": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Melbourne"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                3
+              ]
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "description": "Hover: vertical rule and points with both values.",
+      "transform": [
+        {
+          "pivot": "region",
+          "value": "rebased",
+          "groupby": [
+            "date",
+            "quarter_label"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "date"
+            ],
+            "nearest": true,
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#888",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 0.8
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {
+            "field": "quarter_label",
+            "title": "Quarter"
+          },
+          {
+            "field": "Australia",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Australia"
+          },
+          {
+            "field": "Melbourne",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Melbourne"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "param": "hover",
+            "empty": false
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 60,
+        "opacity": 1
+      },
+      "encoding": {
+        "y": {
+          "field": "rebased",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Melbourne"
+            ],
+            "range": [
+              "#0B3C7A",
+              "#E69F00"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif",
+    "axis": {
+      "domainColor": "#999",
+      "tickColor": "#999"
+    }
+  }
+}

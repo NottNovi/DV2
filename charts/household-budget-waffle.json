@@ -1,0 +1,214 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Side-by-side waffle charts: how a typical low-income and high-income Australian household divides its budget. Each grid has 100 squares; one square = 1% of the household budget.",
+  "data": {
+    "url": "data/household_budget_shares.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.squares)",
+      "as": "squares"
+    },
+    {
+      "calculate": "toNumber(datum.order)",
+      "as": "order"
+    },
+    {
+      "calculate": "datum.category == 'Housing' ? datum.squares : 0",
+      "as": "housing_tmp"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "housing_tmp",
+          "as": "housing_share"
+        }
+      ],
+      "groupby": [
+        "household"
+      ]
+    },
+    {
+      "calculate": "datum.household",
+      "as": "panel"
+    },
+    {
+      "calculate": "sequence(0, datum.squares)",
+      "as": "cell"
+    },
+    {
+      "flatten": [
+        "cell"
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "idx"
+        }
+      ],
+      "groupby": [
+        "household"
+      ],
+      "sort": [
+        {
+          "field": "order"
+        },
+        {
+          "field": "cell"
+        }
+      ]
+    },
+    {
+      "calculate": "(datum.idx - 1) % 10",
+      "as": "col"
+    },
+    {
+      "calculate": "floor((datum.idx - 1) / 10)",
+      "as": "row"
+    },
+    {
+      "calculate": "datum.category",
+      "as": "Category"
+    },
+    {
+      "calculate": "datum.original_label",
+      "as": "Spreadsheet label"
+    },
+    {
+      "calculate": "datum.squares + '% of the budget (' + datum.squares + ' of 100 squares)'",
+      "as": "Share"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "panel",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "order",
+        "op": "min"
+      },
+      "header": {
+        "labelFontSize": 15,
+        "labelFontWeight": "bold",
+        "labelColor": "#1f2d3d",
+        "labelAnchor": "start",
+        "labelPadding": 12,
+        "labelLimit": 0
+      }
+    }
+  },
+  "spacing": 18,
+  "spec": {
+    "width": 275,
+    "height": 240,
+    "params": [
+      {
+        "name": "cat",
+        "select": {
+          "type": "point",
+          "fields": [
+            "category"
+          ],
+          "on": "pointerover",
+          "clear": "pointerout"
+        },
+        "bind": "legend"
+      }
+    ],
+    "mark": {
+      "type": "square",
+      "size": 414,
+      "stroke": "white",
+      "strokeWidth": 1.5,
+      "opacity": 1
+    },
+    "encoding": {
+      "x": {
+        "field": "col",
+        "type": "ordinal",
+        "axis": null
+      },
+      "y": {
+        "field": "row",
+        "type": "ordinal",
+        "axis": null
+      },
+      "color": {
+        "field": "category",
+        "type": "nominal",
+        "title": "Budget category",
+        "scale": {
+          "domain": [
+            "Housing",
+            "Groceries & food",
+            "Utilities",
+            "Transport",
+            "Health & insurance",
+            "Spending & leftover",
+            "Savings & investments"
+          ],
+          "range": [
+            "#D55E00",
+            "#E69F00",
+            "#F0E442",
+            "#999999",
+            "#7B4F9E",
+            "#56B4E9",
+            "#0B3C7A"
+          ]
+        },
+        "legend": {
+          "orient": "bottom",
+          "direction": "horizontal",
+          "columns": 4,
+          "symbolType": "square",
+          "symbolSize": 150,
+          "labelFontSize": 11,
+          "titleFontSize": 13,
+          "columnPadding": 14,
+          "rowPadding": 8,
+          "titlePadding": 8,
+          "labelLimit": 200
+        }
+      },
+      "opacity": {
+        "condition": {
+          "param": "cat",
+          "value": 1
+        },
+        "value": 0.2
+      },
+      "tooltip": [
+        {
+          "field": "household",
+          "title": "Household"
+        },
+        {
+          "field": "Category"
+        },
+        {
+          "field": "Share"
+        },
+        {
+          "field": "Spreadsheet label"
+        }
+      ]
+    }
+  },
+  "resolve": {
+    "scale": {
+      "x": "independent",
+      "y": "independent"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}

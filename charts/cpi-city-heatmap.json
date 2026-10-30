@@ -1,0 +1,289 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Heatmap: annual CPI price change (%) to September 2026 for 11 spending groups plus all groups, across Australia's eight capital cities. Outlined cell = fastest-rising city for that category.",
+  "title": {
+    "text": "",
+    "subtitle": "Black outline = fastest-rising city for each category. Hover a cell for details.",
+    "anchor": "start",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#555"
+  },
+  "data": {
+    "url": "data/cpi_by_city_sep2026.csv"
+  },
+  "transform": [
+    {
+      "calculate": "toNumber(datum.annual_change_percent)",
+      "as": "change"
+    },
+    {
+      "calculate": "toNumber(datum.australia_percent)",
+      "as": "aus"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "change",
+          "as": "row_max"
+        }
+      ],
+      "groupby": [
+        "label"
+      ]
+    },
+    {
+      "calculate": "datum.change == datum.row_max",
+      "as": "fastest"
+    },
+    {
+      "calculate": "datum.city",
+      "as": "City"
+    },
+    {
+      "calculate": "datum.category",
+      "as": "Category"
+    },
+    {
+      "calculate": "(datum.change > 0 ? '+' : '') + format(datum.change, '.1f') + '%'",
+      "as": "Price change, year to Sep 2026"
+    },
+    {
+      "calculate": "(datum.aus > 0 ? '+' : '') + format(datum.aus, '.1f') + '%'",
+      "as": "Australia (8-city average)"
+    },
+    {
+      "calculate": "abs(datum.change - datum.aus) < 0.05 ? 'Same as the national figure' : format(abs(datum.change - datum.aus), '.1f') + ' points ' + (datum.change > datum.aus ? 'higher' : 'lower') + ' than the national figure'",
+      "as": "Compared with Australia"
+    },
+    {
+      "calculate": "datum.fastest ? 'Yes – fastest of the 8 cities' : 'No'",
+      "as": "Fastest-rising city?"
+    }
+  ],
+  "width": {
+    "step": 49
+  },
+  "height": {
+    "step": 28
+  },
+  "encoding": {
+    "x": {
+      "field": "city",
+      "type": "nominal",
+      "sort": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Adelaide",
+        "Perth",
+        "Hobart",
+        "Darwin",
+        "Canberra"
+      ],
+      "title": null,
+      "axis": {
+        "orient": "top",
+        "labelAngle": -35,
+        "labelFontSize": 11,
+        "labelFontWeight": "bold",
+        "domain": false,
+        "ticks": false,
+        "labelAlign": "left"
+      }
+    },
+    "y": {
+      "field": "label",
+      "type": "nominal",
+      "sort": [
+        "All groups (overall)",
+        "Transport",
+        "Housing",
+        "Education",
+        "Recreation & culture",
+        "Alcohol & tobacco",
+        "Insurance & finance",
+        "Health",
+        "Food & drinks",
+        "Phone & internet",
+        "Household items",
+        "Clothing"
+      ],
+      "title": null,
+      "axis": {
+        "labelFontSize": 11,
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 6,
+        "labelFontWeight": {
+          "condition": {
+            "test": "datum.value == 'All groups (overall)'",
+            "value": "bold"
+          },
+          "value": "normal"
+        }
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "city",
+              "label"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "change",
+          "type": "quantitative",
+          "title": [
+            "Price change",
+            "over 12 months"
+          ],
+          "scale": {
+            "type": "linear",
+            "domain": [
+              -3,
+              11
+            ],
+            "domainMid": 0,
+            "scheme": "blueorange"
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 300,
+            "title": "Price change over 12 months",
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "labelExpr": "datum.value + '%'",
+            "format": "+.0f"
+          }
+        },
+        "stroke": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#555"
+          },
+          "value": "white"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 3
+          },
+          "value": 1.5
+        },
+        "tooltip": [
+          {
+            "field": "City"
+          },
+          {
+            "field": "Category"
+          },
+          {
+            "field": "Price change, year to Sep 2026"
+          },
+          {
+            "field": "Australia (8-city average)"
+          },
+          {
+            "field": "Compared with Australia"
+          },
+          {
+            "field": "Fastest-rising city?"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Outline on top: fastest-rising city for each category.",
+      "transform": [
+        {
+          "filter": "datum.fastest"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "fill": null,
+        "filled": false,
+        "stroke": "#111",
+        "strokeWidth": 2.5,
+        "cornerRadius": 2
+      },
+      "encoding": {}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5
+      },
+      "encoding": {
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "format": "+.1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.change >= 7.5 || datum.change <= -2",
+            "value": "white"
+          },
+          "value": "#1f2d3d"
+        }
+      },
+      "transform": [
+        {
+          "filter": "!datum.fastest"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "format": "+.1f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.change >= 7.5 || datum.change <= -2",
+            "value": "white"
+          },
+          "value": "#1f2d3d"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.fastest"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}

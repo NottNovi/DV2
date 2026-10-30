@@ -1,17 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Proportional symbol map: median house price (circle size) and annual change in value (circle colour) for each Australian capital city and the rest of each state, 2026.",
-  "title": {
-    "text": "Where house prices are still climbing",
-    "subtitle": [
-      "Median house price (circle size) and change over the past year (colour), capital cities vs the rest of each state.",
-      "Hover a circle for details."
-    ],
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 13,
-    "subtitleColor": "#555"
-  },
   "width": "container",
   "height": 520,
   "projection": {

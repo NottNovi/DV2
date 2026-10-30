@@ -1,17 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Choropleth map: median weekly rent for new lettings in each Victorian local government area (council), September quarter 2025.",
-  "title": {
-    "text": "What a new lease costs each week, by council",
-    "subtitle": [
-      "Median weekly rent for new leases, September quarter 2025. Hover a council for details.",
-      "Grey councils had too few new leases of that home type to report a median."
-    ],
-    "anchor": "start",
-    "fontSize": 18,
-    "subtitleFontSize": 13,
-    "subtitleColor": "#555"
-  },
   "width": "container",
   "height": 460,
   "projection": {

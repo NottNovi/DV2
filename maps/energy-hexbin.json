@@ -1,0 +1,222 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Binned (hexagon) map of electricity use per customer per day in the AusNet network area of eastern Victoria, July 2021 to June 2022. Each hexagon takes the value of the council its centre falls in.",
+  "width": "container",
+  "height": 520,
+  "projection": {
+    "type": "mercator"
+  },
+  "params": [
+    {
+      "name": "measure",
+      "value": "res",
+      "bind": {
+        "input": "select",
+        "name": "Measure: ",
+        "options": [
+          "res",
+          "solar",
+          "bus"
+        ],
+        "labels": [
+          "Homes: electricity used from the grid",
+          "Solar: electricity sent back to the grid",
+          "Businesses: electricity used from the grid"
+        ]
+      }
+    },
+    {
+      "name": "period",
+      "value": "year",
+      "bind": {
+        "input": "radio",
+        "name": "Season: ",
+        "options": [
+          "year",
+          "summer",
+          "winter"
+        ],
+        "labels": [
+          "Whole year",
+          "Summer (Dec–Feb)",
+          "Winter (Jun–Aug)"
+        ]
+      }
+    }
+  ],
+  "layer": [
+    {
+      "description": "Context: the 31 councils in the AusNet network area (outlines), so each hexagon can be read against its council.",
+      "data": {
+        "url": "data/vic_lga_2022.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "lgas"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f2f2f2",
+        "stroke": "#bdbdbd",
+        "strokeWidth": 0.6
+      },
+      "transform": [
+        {
+          "lookup": "properties.lga",
+          "from": {
+            "data": {
+              "url": "data/energy_per_customer_by_lga.csv"
+            },
+            "key": "lga",
+            "fields": [
+              "lga"
+            ]
+          },
+          "as": [
+            "in_ausnet"
+          ]
+        },
+        {
+          "filter": "isValid(datum.in_ausnet)"
+        }
+      ]
+    },
+    {
+      "description": "Hexagon bins coloured by the selected measure for the council each bin falls in.",
+      "data": {
+        "url": "data/energy_hex_bins.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.lga",
+          "from": {
+            "data": {
+              "url": "data/energy_per_customer_by_lga.csv"
+            },
+            "key": "lga"
+          },
+          "as": "e"
+        },
+        {
+          "calculate": "datum.e && datum.e[measure + '_' + period] !== '' ? toNumber(datum.e[measure + '_' + period]) : null",
+          "as": "kwh"
+        },
+        {
+          "calculate": "datum.e ? toNumber(datum.e['area_avg_' + measure + '_' + period]) : null",
+          "as": "area_avg"
+        },
+        {
+          "calculate": "datum.e ? datum.e[measure + '_customers'] : ''",
+          "as": "customers"
+        },
+        {
+          "calculate": "datum.customers !== '' && toNumber(datum.customers) >= 1000",
+          "as": "enough"
+        },
+        {
+          "calculate": "datum.properties.lga",
+          "as": "Council"
+        },
+        {
+          "calculate": "!datum.enough ? 'Not shown: fewer than 1,000 AusNet customers here (most of this council is on another electricity network)' : format(datum.kwh, '.1f') + ' kWh per customer per day'",
+          "as": "Average use"
+        },
+        {
+          "calculate": "!datum.enough || datum.kwh == null ? '' : (abs(datum.kwh / datum.area_avg - 1) < 0.005 ? 'About the same as' : format(abs(datum.kwh / datum.area_avg - 1), '.0%') + (datum.kwh > datum.area_avg ? ' above' : ' below')) + ' the AusNet-area average (' + format(datum.area_avg, '.1f') + ')'",
+          "as": "Compared with area"
+        },
+        {
+          "calculate": "datum.customers === '' ? 'None recorded' : format(toNumber(datum.customers), ',')",
+          "as": "Customers (monthly average)"
+        },
+        {
+          "calculate": "datum.enough ? datum.kwh : null",
+          "as": "kwh_shown"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "Council"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "strokeWidth": 0.4,
+        "invalid": "show"
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.kwh_shown == null",
+            "value": "#cfcfcf"
+          },
+          "field": "kwh_shown",
+          "type": "quantitative",
+          "title": "kWh per customer per day",
+          "scale": {
+            "scheme": "blues",
+            "zero": false,
+            "nice": true
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "direction": "horizontal",
+            "gradientLength": 220,
+            "titleFontSize": 12,
+            "labelFontSize": 11,
+            "fillColor": "rgba(255,255,255,0.85)",
+            "padding": 6
+          }
+        },
+        "stroke": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#D55E00"
+          },
+          "value": "white"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1.6
+          },
+          "value": 0.4
+        },
+        "tooltip": [
+          {
+            "field": "Council"
+          },
+          {
+            "field": "Average use"
+          },
+          {
+            "field": "Compared with area"
+          },
+          {
+            "field": "Customers (monthly average)"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Arial, sans-serif"
+  }
+}
